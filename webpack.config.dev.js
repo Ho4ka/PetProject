@@ -1,6 +1,6 @@
 'use strict';
 const webpack = require('webpack');
-const { VueLoaderPlugin } = require('vue-loader');
+const {VueLoaderPlugin} = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
@@ -16,6 +16,16 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            },
             {
                 test: /\.vue$/,
                 use: 'vue-loader'
