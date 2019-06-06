@@ -1,18 +1,16 @@
-<template>
-    <div>
-        <h1>Hello erWorld!</h1>
-    </div>
-</template>
+
 <script>
+  import Main from "./components/Main.vue";
     export default {
-        name: "App"
+        name: "App",
+      components: {
+          Main
+      }
     }
 </script>
 
-<style lang="scss" >
-div {
-    h1 {
-        color: red;
-        }
-    }
-</style>
+<template>
+    <Main />
+</template>
+
+<style lang="scss"></style>
