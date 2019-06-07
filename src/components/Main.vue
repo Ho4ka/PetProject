@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <section class="main">
         <div class="input-group">
             <input class="search" type="text" placeholder="Searching for something?"/><span class="bar"></span>
         </div>
@@ -8,8 +8,14 @@
                 <div>{{data.name}}</div>
                 <img :src="getImgUrl(data.image)" alt="">
             </div>
+
+                <router-link to='/'>Home</router-link>
+                <router-link to='/register'>Register</router-link>
+                <router-link to='/login'>Login</router-link>
+
+            <router-view />
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -32,7 +38,7 @@
 
 <style scoped lang="scss">
     .main {
-        background: linear-gradient(45deg, #26547c 0%, #06d6a0 100%);
+        background: #fff;
         width: 100%;
         height: 100vh;
         display: flex;
@@ -41,6 +47,7 @@
 
         .input-group {
          margin: 50px;
+         border: 1px solid #c0c0c029;
 
             .search {
                 height: 25px;
@@ -63,7 +70,8 @@
             flex-wrap: wrap;
 
             .item {
-                background: white;
+                background: #e0e0e08c;
+                border: 1px solid #c0c0c029;
                 width: 200px;
                 height: 200px;
                 margin: 20px;

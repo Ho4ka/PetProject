@@ -1,7 +1,8 @@
 
 <script>
   import Main from "./components/Main.vue";
-    export default {
+  import "./assets/scss/style.scss";
+  export default {
         name: "App",
       components: {
           Main
@@ -10,7 +11,10 @@
 </script>
 
 <template>
-    <Main />
+    <div id="app">
+        <Main />
+    </div>
+
 </template>
 
 <style lang="scss"></style>
