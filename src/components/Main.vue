@@ -4,34 +4,34 @@
             <input class="search" type="text" placeholder="Searching for something?"/><span class="bar"></span>
         </div>
         <div class="items-wrapper">
-            <div class="item" :key="data.id" v-for="data in items">
-                <div>{{data.name}}</div>
-                <img :src="getImgUrl(data.image)" alt="">
-            </div>
 
-                <router-link to='/'>Home</router-link>
-                <router-link to='/register'>Register</router-link>
-                <router-link to='/login'>Login</router-link>
+            <ul class="food-list">
+                <li class="food-item" :key="item.id" v-for="item in items">
+                    <Item :item="item"/>
+                </li>
+            </ul>
+            <router-link to='/'>Home</router-link>
+            <router-link to='/register'>Register</router-link>
+            <router-link to='/login'>Login</router-link>
 
-            <router-view />
+            <router-view/>
         </div>
     </section>
 </template>
 
 <script>
   import json from '../data/data.json';
+  import Item from '../components/Item.vue';
 
   export default {
     name: "Main",
-    data(){
-      return{
+    components: {
+      Item
+    },
+    data() {
+      return {
         items: json
       }
-    },
-    methods: {
-      getImgUrl(i) {
-        return 'src/assets/images/' + i;
-      },
     }
   }
 </script>
@@ -46,8 +46,8 @@
         align-items: center;
 
         .input-group {
-         margin: 50px;
-         border: 1px solid #c0c0c029;
+            margin: 50px;
+            border: 1px solid #c0c0c029;
 
             .search {
                 height: 25px;
@@ -63,30 +63,18 @@
                 position: relative;
             }
         }
+
         .items-wrapper {
             width: 60%;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
 
-            .item {
-                background: #e0e0e08c;
-                border: 1px solid #c0c0c029;
-                width: 200px;
-                height: 200px;
-                margin: 20px;
-                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
-                text-align: center;
-                transition: 0.3s;
-
-                img {
-                    width: 200px;
-                    height: 182px;
-                }
-
-                &:hover {
-                    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-                }
+            .food-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                list-style: none;
             }
         }
     }
