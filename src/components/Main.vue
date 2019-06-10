@@ -4,17 +4,17 @@
             <input class="search" v-model="search" type="text" placeholder="Searching for something?"/><span class="bar"></span>
         </div>
         <div class="items-wrapper">
-            <ul class="food-list">
+            <ul v-if="goToRouter === false" class="food-list">
                 <li  class="food-item" :key="item.id" v-for="item in filteredList">
                     <Item :item="item"/>
                 </li>
             </ul>
-            <router-link to='/'>Home</router-link>
-            <router-link to='/register'>Register</router-link>
-            <router-link to='/login'>Login</router-link>
+            <router-link v-if="goToRouter === false" to='/register'>Register</router-link>
+            <router-link  v-if="goToRouter === false" to='/login'>Login</router-link>
 
-            <router-view/>
         </div>
+        <router-view @clicked="onClickChild" :items="items"></router-view>
+
     </section>
 </template>
 
@@ -30,7 +30,9 @@
     data() {
       return {
         items: json,
-        search: ''
+        search: '',
+          goToRouter: false
+
       }
     },
       computed: {
@@ -38,6 +40,11 @@
               return this.items.filter(post => {
                   return post.name.toLowerCase().includes(this.search.toLowerCase())
               })
+          }
+      },
+      methods: {
+          onClickChild (value) {
+              this.goToRouter = true;
           }
       }
   }
@@ -84,7 +91,7 @@
                 list-style: none;
 
                 .food-item {
-                    animation-duration: .1s;
+                    animation-duration: .2s;
                     animation-name: bounceIn;
                     animation-timing-function: ease;
                 }
@@ -93,11 +100,11 @@
     }
     @keyframes bounceIn {
         0% {
-            transform: scale(0.3);
+            transform: scale(0.5);
             opacity: 0;
         }
         25% {
-            transform: scale(0.5);
+            transform: scale(0.6);
             opacity: .2;
         }
         50% {

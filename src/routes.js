@@ -1,11 +1,11 @@
 // routes.js
 
-import Home from './components/Home.vue';
+import Pizza from './components/Pizza.vue';
 import Register from './components/Register.vue';
 import Login from './components/Login.vue';
 
 const routes = [
-  { path: '/', component: Home },
+  { path: '/pizza', component: Pizza },
   { path: '/register', component: Register },
   { path: '/login', component: Login }
 ];

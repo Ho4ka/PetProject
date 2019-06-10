@@ -1,10 +1,10 @@
 <template>
     <div class="item-wrapper">
-        <h4 class="item-header">{{item.name}}</h4>
-        <img class="item-img" :src="getImgUrl(item.image)" alt="">
+        <router-link @click.native="sayHello" :to='`${item.link}`'>
+            <h4 class="item-header">{{item.name}}</h4>
+            <img class="item-img" :src="getImgUrl(item.image)" alt="">
+        </router-link>
     </div>
-
-
 </template>
 
 <script>
@@ -17,7 +17,10 @@
     methods: {
       getImgUrl(i) {
         return 'src/assets/images/' + i;
-      }
+      },
+        sayHello() {
+            this.goToRouter = true;
+        }
       }
   }
 </script>
@@ -45,6 +48,4 @@
          height: 182px;
      }
  }
-
-
 </style>

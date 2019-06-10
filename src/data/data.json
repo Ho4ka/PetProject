@@ -2,12 +2,15 @@
   {
     "id": 1,
     "name": "Pizza",
-    "image": "pizza.jpg"
+    "image": "pizza.jpg",
+     "representation": ["carbonara","trusru"],
+    "link": "/pizza"
   },
    {
     "id": 2,
     "name": "Salad",
-    "image": "salad.jpg"
+    "image": "salad.jpg",
+     "link": "/salad"
   },
  {
     "id": 3,
