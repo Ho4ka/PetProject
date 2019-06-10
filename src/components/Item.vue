@@ -3,6 +3,8 @@
         <h4 class="item-header">{{item.name}}</h4>
         <img class="item-img" :src="getImgUrl(item.image)" alt="">
     </div>
+
+
 </template>
 
 <script>
@@ -11,6 +13,7 @@
     props: {
       item: Object
     },
+
     methods: {
       getImgUrl(i) {
         return 'src/assets/images/' + i;
@@ -20,7 +23,6 @@
 </script>
 
 <style lang="scss">
-
  .item-wrapper {
      background: #e0e0e08c;
      border: 1px solid #c0c0c029;

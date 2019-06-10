@@ -1,52 +1,52 @@
-{
-  "pizza": {
+[
+  {
     "id": 1,
     "name": "Pizza",
     "image": "pizza.jpg"
   },
-  "salads": {
+   {
     "id": 2,
     "name": "Salad",
     "image": "salad.jpg"
   },
-  "burgers": {
+ {
     "id": 3,
     "name": "Burgers",
     "image": "burger.jpg"
   },
-  "drinks": {
+  {
     "id": 4,
     "name": "Drinks",
     "image": "drinks.jpg"
   },
-  "pasta": {
+ {
     "id": 5,
     "name": "Pasta",
     "image": "pasta.jpg"
   },
-  "soup": {
+ {
     "id": 6,
     "name": "Soup",
     "image": "soup.jpg"
   },
-  "cocktails": {
+{
     "id": 7,
     "name": "Cocktails",
     "image": "cocktails.jpg"
   },
-  "dessert": {
+ {
     "id": 8,
     "name": "Desserts",
     "image": "desserts.jpg"
   },
-  "alcohol": {
+  {
     "id": 9,
     "name": "Alcohol",
     "image": "alcohol.jpg"
   },
-  "snack": {
+  {
     "id": 10,
     "name": "Snacks",
     "image": "snacks.jpg"
   }
-}
+]

@@ -1,12 +1,11 @@
 <template>
     <section class="main">
         <div class="input-group">
-            <input class="search" type="text" placeholder="Searching for something?"/><span class="bar"></span>
+            <input class="search" v-model="search" type="text" placeholder="Searching for something?"/><span class="bar"></span>
         </div>
         <div class="items-wrapper">
-
             <ul class="food-list">
-                <li class="food-item" :key="item.id" v-for="item in items">
+                <li  class="food-item" :key="item.id" v-for="item in filteredList">
                     <Item :item="item"/>
                 </li>
             </ul>
@@ -30,9 +29,17 @@
     },
     data() {
       return {
-        items: json
+        items: json,
+        search: ''
       }
-    }
+    },
+      computed: {
+          filteredList() {
+              return this.items.filter(post => {
+                  return post.name.toLowerCase().includes(this.search.toLowerCase())
+              })
+          }
+      }
   }
 </script>
 
@@ -75,7 +82,35 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 list-style: none;
+
+                .food-item {
+                    animation-duration: .1s;
+                    animation-name: bounceIn;
+                    animation-timing-function: ease;
+                }
             }
+        }
+    }
+    @keyframes bounceIn {
+        0% {
+            transform: scale(0.3);
+            opacity: 0;
+        }
+        25% {
+            transform: scale(0.5);
+            opacity: .2;
+        }
+        50% {
+            transform: scale(0.7);
+            opacity: .5;
+        }
+        75% {
+            transform: scale(0.8);
+            opacity: .7;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
         }
     }
 </style>
