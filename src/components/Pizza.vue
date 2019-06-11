@@ -2,9 +2,11 @@
     <div>
         <ul>
             <li v-for="item in items" v-bind:key="item.id">
-                {{item.name}}
-                <h3 v-bind:onclick="$emit('clicked')" >Test</h3>
-
+                <ul v-if="item.name === 'Pizza'">
+                    <li  v-bind:onload="$emit('clicked')" v-for="pos in item.representation" v-bind:key="pos" >
+                        {{pos}}
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>
