@@ -1,20 +1,18 @@
 <template>
     <section class="main">
-        <div class="input-group">
+        <div v-if="showItems === false" class="input-group">
             <input class="search" v-model="search" type="text" placeholder="Searching for something?"/><span class="bar"></span>
         </div>
         <div class="items-wrapper">
-            <ul v-if="goToRouter === false" class="food-list">
+            <ul v-if="showItems === false" class="food-list">
                 <li  class="food-item" :key="item.id" v-for="item in filteredList">
                     <Item :item="item"/>
                 </li>
             </ul>
-            <router-link v-if="goToRouter === false" to='/register'>Register</router-link>
-            <router-link  v-if="goToRouter === false" to='/login'>Login</router-link>
-
+            <router-link v-if="showItems === false" to='/register'>Register</router-link>
+            <router-link  v-if="showItems === false" to='/login'>Login</router-link>
         </div>
-        <router-view @clicked="onClickChild" :items="items"></router-view>
-
+        <router-view @clicked="showItem" :items="items"></router-view>
     </section>
 </template>
 
@@ -31,7 +29,7 @@
       return {
         items: json,
         search: '',
-          goToRouter: false
+        showItems: false,
 
       }
     },
@@ -43,8 +41,8 @@
           }
       },
       methods: {
-          onClickChild (value) {
-              this.goToRouter = true;
+          showItem (value) {
+              this.showItems = true;
           }
       }
   }

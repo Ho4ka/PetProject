@@ -2,12 +2,12 @@
 
 import Pizza from './components/Pizza.vue';
 import Register from './components/Register.vue';
-import Login from './components/Login.vue';
+import Salad from './components/Salad.vue';
 
 const routes = [
   { path: '/pizza', component: Pizza },
   { path: '/register', component: Register },
-  { path: '/login', component: Login }
+  { path: '/salad', component: Salad }
 ];
 
 export default routes;

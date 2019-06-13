@@ -5,9 +5,9 @@ import VueRouter from 'vue-router';
 import routes from './routes';
 
 
-import Home from './components/Pizza.vue';
+import Pizza from './components/Pizza.vue';
 import Register from './components/Register.vue';
-import Login from './components/Login.vue';
+import Salad from './components/Salad.vue';
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);

@@ -1,6 +1,6 @@
 <template>
     <div class="item-wrapper">
-        <router-link @click.native="sayHello" :to='`${item.link}`'>
+        <router-link @click.native="showItem" :to='`${item.link}`'>
             <h4 class="item-header">{{item.name}}</h4>
             <img class="item-img" :src="getImgUrl(item.image)" alt="">
         </router-link>
@@ -18,8 +18,8 @@
       getImgUrl(i) {
         return 'src/assets/images/' + i;
       },
-        sayHello() {
-            this.goToRouter = true;
+        showItem() {
+            this.showItems = true;
         }
       }
   }

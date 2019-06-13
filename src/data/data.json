@@ -2,15 +2,26 @@
   {
     "id": 1,
     "name": "Pizza",
+    "type": "pizza",
     "image": "pizza.jpg",
-     "representation": ["carbonara","trusru"],
+    "allItems": [ {
+      "name":"Diablo",
+      "description": "Some text goes here",
+      "photo": "diabola.jpg",
+      "price": "80$"
+    },{
+      "name":"Garage",
+      "description": "Some text goes here",
+      "price": "50$"
+    }],
     "link": "/pizza"
   },
    {
     "id": 2,
     "name": "Salad",
     "image": "salad.jpg",
-     "link": "/salad"
+     "link": "/salad",
+     "allItems": ["Greec","Cesar"]
   },
  {
     "id": 3,
