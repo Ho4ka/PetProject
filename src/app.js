@@ -2,12 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import VueRouter from 'vue-router';
 
-import routes from './routes';
-
-
-import Pizza from './components/Pizza.vue';
-import Register from './components/Register.vue';
-import Salad from './components/Salad.vue';
+import routes from './routes.js';
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
