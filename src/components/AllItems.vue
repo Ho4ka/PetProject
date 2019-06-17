@@ -44,7 +44,7 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style  lang="scss">
     .items-wrapper {
         width: 60%;
         display: flex;

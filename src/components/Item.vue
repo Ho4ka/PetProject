@@ -1,7 +1,7 @@
 <template>
     <div class="item-wrapper">
+        <h4 class="item-header">{{item.name}}</h4>
         <router-link :to='`${item.link}`'>
-            <h4 class="item-header">{{item.name}}</h4>
             <img class="item-img" :src="getImgUrl(item.image)" alt="">
         </router-link>
     </div>
@@ -22,7 +22,7 @@
     }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
     .item-wrapper {
         background: #e0e0e08c;
         border: 1px solid #c0c0c029;

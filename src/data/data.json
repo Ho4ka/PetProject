@@ -5,15 +5,53 @@
     "type": "pizza",
     "image": "pizza.jpg",
     "allItems": [ {
-      "name":"Diablo",
-      "description": "Some text goes here",
+      "name":"Pizza Diablo",
+      "description": "Description text about product",
       "photo": "diabola.jpg",
-      "price": "80$"
+      "price": "$4.75"
     },{
-      "name":"Garage",
-      "description": "Some text goes here",
-      "price": "50$"
-    }],
+      "name":" Pizza Garage",
+      "description": "Description text about product",
+      "photo": "garage.jpg",
+      "price": "$3.25"
+    },{
+      "name":" Pizza Garage",
+      "description": "Description text about product",
+      "photo": "garage.jpg",
+      "price": "$3.50"
+    },
+      {
+        "name":" Pizza Garage",
+        "description": "Description text about product",
+        "photo": "garage.jpg",
+        "price": "$2.60"
+      },
+      {
+        "name":" Pizza Garage",
+        "description": "Description text about product",
+        "photo": "garage.jpg",
+        "price": "$3.50"
+      },
+      {
+        "name":" Pizza Garage",
+        "description": "Description text about product",
+        "photo": "garage.jpg",
+        "price": "$3.20"
+      }
+    ,
+      {
+        "name":" Pizza Garage",
+        "description": "Description text about product",
+        "photo": "garage.jpg",
+        "price": "$4.00"
+      }
+    ,
+      {
+        "name":" Pizza Garage",
+        "description": "Description text about product",
+        "photo": "garage.jpg",
+        "price": "$3.25"
+      }],
     "link": "/pizza"
   },
    {
