@@ -1,6 +1,6 @@
 <template>
     <section class="item-component-wrapper">
-        <button @click="goToMain">Go Back</button>
+        <button class="go-back" @click="goToMain">Go Back</button>
         <div v-for="item in items" :key="item.id">
             <div class="type" v-if="item.type === 'salad'">
                 <h1 class="item-header">{{item.name}}</h1>
@@ -26,11 +26,16 @@
 </script>
 
 <style  lang="scss">
-
     .item-component-wrapper {
         display: flex;
         width: 100%;
         height: 100vh;
+
+        .go-back {
+            position: absolute;
+            left: 10%;
+        }
+
         .type {
             display: flex;
             flex-wrap: wrap;

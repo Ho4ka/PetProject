@@ -1,5 +1,6 @@
 <template>
     <section class="main">
+        <ShoppingCart class="shopping-card"/>
         <router-view :items="items" ></router-view>
     </section>
 </template>
@@ -7,9 +8,11 @@
 <script>
 
     import json from '../static/data.json';
+    import ShoppingCart from "./ShoppingCart.vue";
     export default {
         name: "Main",
-        data() {
+      components: {ShoppingCart},
+      data() {
             return {
                 items: json
             }
@@ -26,6 +29,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        .shopping-card {
+            position: absolute;
+            right: 20%;
+        }
     }
 
     @keyframes bounceIn {
