@@ -1,0 +1,233 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza",
+    "type": "pizza",
+    "image": "pizza.jpg",
+    "allItems": [ {
+      "name":"Pizza Diablo",
+      "description": "Description text about product",
+      "photo": "diabola.jpg",
+      "price": "$4.75"
+    },{
+      "name":" Pizza Garage",
+      "description": "Description text about product",
+      "photo": "garage.jpg",
+      "price": "$3.25"
+    },{
+      "name":" Pizza Garage",
+      "description": "Description text about product",
+      "photo": "garage.jpg",
+      "price": "$3.50"
+    },
+      {
+        "name":" Pizza Garage",
+        "description": "Description text about product",
+        "photo": "garage.jpg",
+        "price": "$2.60"
+      },
+      {
+        "name":" Pizza Garage",
+        "description": "Description text about product",
+        "photo": "garage.jpg",
+        "price": "$3.50"
+      },
+      {
+        "name":" Pizza Garage",
+        "description": "Description text about product",
+        "photo": "garage.jpg",
+        "price": "$3.20"
+      }
+    ,
+      {
+        "name":" Pizza Garage",
+        "description": "Description text about product",
+        "photo": "garage.jpg",
+        "price": "$4.00"
+      }
+    ,
+      {
+        "name":" Pizza Garage",
+        "description": "Description text about product",
+        "photo": "garage.jpg",
+        "price": "$3.25"
+      }],
+    "link": "/pizza"
+  },
+   {
+    "id": 2,
+    "name": "Salad",
+     "type": "salad",
+    "image": "salad.jpg",
+     "link": "/salad",
+     "allItems": [ {
+       "name":"Salad Cesar",
+       "description": "Description text about product",
+       "photo": "cesar.jpg",
+       "price": "$4.75"
+     },{
+       "name":"Salad Bowl of Life",
+       "description": "Description text about product",
+       "photo": "life.jpg",
+       "price": "$3.25"
+     },{
+       "name":"Salad Bowl of Life",
+       "description": "Description text about product",
+       "photo": "life.jpg",
+       "price": "$3.50"
+     },
+       {
+         "name":"Salad Bowl of Life",
+         "description": "Description text about product",
+         "photo": "life.jpg",
+         "price": "$2.60"
+       },
+       {
+         "name":"Salad Bowl of Life",
+         "description": "Description text about product",
+         "photo": "life.jpg",
+         "price": "$3.50"
+       },
+       {
+         "name":"Salad Bowl of Life",
+         "description": "Description text about product",
+         "photo": "life.jpg",
+         "price": "$3.20"
+       }
+     ,
+       {
+         "name":"Salad Bowl of Life",
+         "description": "Description text about product",
+         "photo": "life.jpg",
+         "price": "$4.00"
+       }
+     ,
+       {
+         "name":"Salad Bowl of Life",
+         "description": "Description text about product",
+         "photo": "life.jpg",
+         "price": "$3.25"
+       }]
+   },
+ {
+    "id": 3,
+    "name": "Burgers",
+    "type": "burger",
+    "image": "burger.jpg",
+    "link": "/burger",
+   "allItems": [ {
+     "name":"Burger",
+     "description": "Description text about product",
+     "photo": "burgers.jpg",
+     "price": "$4.75"
+   },{
+     "name":"Salad Bowl of Life",
+     "description": "Description text about product",
+     "photo": "burgers.jpg",
+     "price": "$3.25"
+   },{
+     "name":"Salad Bowl of Life",
+     "description": "Description text about product",
+     "photo": "burgers.jpg",
+     "price": "$3.50"
+   },
+     {
+       "name":"Salad Bowl of Life",
+       "description": "Description text about product",
+       "photo": "burgers.jpg",
+       "price": "$2.60"
+     },
+     {
+       "name":"Salad Bowl of Life",
+       "description": "Description text about product",
+       "photo": "burgers.jpg",
+       "price": "$3.50"
+     },
+     {
+       "name":"Salad Bowl of Life",
+       "description": "Description text about product",
+       "photo":"burgers.jpg",
+       "price": "$3.20"
+     }
+   ,
+     {
+       "name":"Salad Bowl of Life",
+       "description": "Description text about product",
+       "photo": "burgers.jpg",
+       "price": "$4.00"
+     }
+   ,
+     {
+       "name":"Salad Bowl of Life",
+       "description": "Description text about product",
+       "photo": "burgers.jpg",
+       "price": "$3.25"
+     }]
+ },
+  {
+    "id": 4,
+    "name": "Drinks",
+    "type": "drinks",
+    "link": "./drink",
+    "allItems": [ {
+      "name":"Burger",
+      "description": "Description text about product",
+      "photo": "cola.jpg",
+      "price": "$4.75"
+    },{
+      "name":"Salad Bowl of Life",
+      "description": "Description text about product",
+      "photo": "cola.jpg",
+      "price": "$3.25"
+    },{
+      "name":"Salad Bowl of Life",
+      "description": "Description text about product",
+      "photo": "cola.jpg",
+      "price": "$3.50"
+    },
+      {
+        "name":"Salad Bowl of Life",
+        "description": "Description text about product",
+        "photo": "cola.jpg",
+        "price": "$2.60"
+      },
+      {
+        "name":"Salad Bowl of Life",
+        "description": "Description text about product",
+        "photo": "cola.jpg",
+        "price": "$3.50"
+      }
+     ],
+    "image": "drinks.jpg"
+  },
+ {
+    "id": 5,
+    "name": "Pasta",
+    "image": "pasta.jpg"
+  },
+ {
+    "id": 6,
+    "name": "Soup",
+    "image": "soup.jpg"
+  },
+{
+    "id": 7,
+    "name": "Cocktails",
+    "image": "cocktails.jpg"
+  },
+ {
+    "id": 8,
+    "name": "Desserts",
+    "image": "desserts.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Alcohol",
+    "image": "alcohol.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Snacks",
+    "image": "snacks.jpg"
+  }
+]

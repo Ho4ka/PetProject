@@ -49,10 +49,11 @@
         width: 60%;
         display: flex;
         justify-content: center;
+        flex-direction: column;
         flex-wrap: wrap;
 
         .input-group {
-            margin: 50px;
+            margin: 50px auto;
             border: 1px solid #c0c0c029;
 
             .search {

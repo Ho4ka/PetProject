@@ -28,25 +28,26 @@
 
 <style  lang="scss">
     .card {
-        width: 300px;
-        height: 400px;
+        width: 200px;
+        height: auto;
         background: white;
         margin: 20px;
         img {
-            width: 300px;
-            height: 200px;
+            width: 200px;
+            height: 150px;
         }
 
         .description {
          text-align: center;
+            padding: 3px;
 
             .description-header {
-                margin-bottom: 40px;
+                margin-bottom: 10px;
                 color: #333;
             }
 
             .description-text {
-                margin-bottom: 30px;
+                margin-bottom: 10px;
                 color: rgb(134, 134, 134);
             }
             .description-price {
@@ -56,10 +57,15 @@
         }
         .buy {
             width: 80%;
+            background-color: orangered;
+            border: none;
+            color: white;
+            margin: 10px auto;
+            padding: 10px 27px;
+            text-align: center;
+            text-decoration: none;
             display: block;
-            margin: 0 auto;
-            height: 30px;
-            background: orangered;
+            outline: none;
         }
     }
 </style>

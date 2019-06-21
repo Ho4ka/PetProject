@@ -5,7 +5,8 @@
 </template>
 
 <script>
-    import json from '../data/data.json';
+
+    import json from '../static/data.json';
     export default {
         name: "Main",
         data() {
@@ -17,12 +18,11 @@
         }
     }
 
-
 </script>
 
 <style scoped lang="scss">
     .main {
-        background: #fff;
+        background: #e4e4e4;
         display: flex;
         flex-direction: column;
         align-items: center;
