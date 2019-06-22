@@ -1,24 +1,25 @@
 <template>
     <section class="main">
         <ShoppingCart class="shopping-card"/>
-        <router-view :items="items" ></router-view>
+        <router-view :items="forSale" ></router-view>
     </section>
 </template>
-
 <script>
-
-    import json from '../static/data.json';
     import ShoppingCart from "./ShoppingCart.vue";
     export default {
         name: "Main",
       components: {ShoppingCart},
       data() {
             return {
-                items: json
+
             }
         },
         methods: {
-        }
+        },
+        computed: {
+            forSale() { return this.$store.getters.forSale; },
+            inCart() { return this.$store.getters.inCart; },
+        },
     }
 
 </script>

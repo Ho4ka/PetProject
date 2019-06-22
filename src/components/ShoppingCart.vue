@@ -1,22 +1,20 @@
 <template>
-    <div class="shopping-cart">
-        <font-awesome-icon class="icon" size="2x" icon="shopping-cart" />
-    </div>
+        <div class="row mb-3">
+            <div class="shopping-cart col-md-3">
+                <button class="btn btn-primary">Cart ({{ inCart.length }})</button>
+            </div>
+        </div>
 </template>
 
 <script>
   export default {
-    name: "ShoppingCart"
+    name: "ShoppingCart",
+      computed: {
+          inCart() { return this.$store.getters.inCart; },
+      },
   }
 </script>
 
 <style lang="scss">
-    .shopping-cart {
-        width: 200px;
-        height: 50px;
-        background: green;
-        .icon {
-            color: white;
-        }
-    }
+
 </style>

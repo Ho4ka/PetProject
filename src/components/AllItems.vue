@@ -1,8 +1,7 @@
 <template>
     <div class="items-wrapper">
         <div class="input-group">
-            <input class="search" v-model="search" type="text" placeholder="Searching for something?"/>
-            <span class="bar"></span>
+            <b-form-input v-model="search" placeholder="What do you search ?"></b-form-input>
         </div>
         <ul class="food-list">
             <li class="food-item" :key="item.id" v-for="item in filteredList">

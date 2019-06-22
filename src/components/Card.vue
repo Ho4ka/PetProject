@@ -7,7 +7,7 @@
            <div class="description-text">{{ pos.description }}</div>
             <div class="description-price"> {{ pos.price }}</div>
         </div>
-        <button class="buy">Buy item</button>
+        <button class="buy" @click="addToCart(pos.name)">Buy item</button>
 
     </div>
 </template>
@@ -16,11 +16,15 @@
     export default {
         name: "Card",
         props:{
-            pos: Object
+            pos: Object,
         },
         methods: {
             getImgUrl(i) {
                 return 'src/assets/images/' + i;
+            },
+            addToCart(invId) {
+                console.log(invId);
+                this.$store.dispatch('addToCart', invId);
             },
         }
     }
@@ -32,10 +36,9 @@
         height: auto;
         background: white;
         margin: 20px;
-        img {
-            width: 200px;
-            height: 150px;
-        }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
 
         .description {
          text-align: center;
