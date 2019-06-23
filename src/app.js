@@ -19,7 +19,9 @@ Vue.use(BootstrapVue);
 library.add(faShoppingCart);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-
+Vue.filter('toUSD', function (value) {
+    return `$${value}`;
+});
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);

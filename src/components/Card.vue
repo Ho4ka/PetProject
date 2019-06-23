@@ -1,20 +1,22 @@
 <template>
     <div class="card">
         <img :src="getImgUrl(pos.photo)"  alt="">
-
         <div class="description">
             <h3 class="description-header">{{ pos.name }}</h3>
            <div class="description-text">{{ pos.description }}</div>
-            <div class="description-price"> {{ pos.price }}</div>
+            <div class="description-price"> {{ pos.price | dollars }}</div>
         </div>
-        <button class="buy" @click="addToCart(pos.name)">Buy item</button>
-
+        <button class="buy" @click="addToCart(pos)">Buy item</button>
     </div>
 </template>
 
 <script>
+    import { dollars } from '../filters.js';
     export default {
         name: "Card",
+        filters:{
+          dollars
+        },
         props:{
             pos: Object,
         },
@@ -23,7 +25,6 @@
                 return 'src/assets/images/' + i;
             },
             addToCart(invId) {
-                console.log(invId);
                 this.$store.dispatch('addToCart', invId);
             },
         }

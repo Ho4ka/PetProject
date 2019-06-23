@@ -40,7 +40,6 @@
             display: flex;
             flex-wrap: wrap;
             background: #e4e4e4;
-            justify-content: space-around;
 
             .item-header {
                 width: 100%;

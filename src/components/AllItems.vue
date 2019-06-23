@@ -1,15 +1,16 @@
 <template>
-    <div class="items-wrapper">
-        <div class="input-group">
-            <b-form-input v-model="search" placeholder="What do you search ?"></b-form-input>
-        </div>
-        <ul class="food-list">
-            <li class="food-item" :key="item.id" v-for="item in filteredList">
+    <b-container>
+        <b-row>
+            <b-col class="d-flex justify-content-center">
+                <b-form-input v-model="search" placeholder="What do you search ?"></b-form-input>
+            </b-col>
+        </b-row>
+        <b-row>
+            <b-col :key="item.id" v-for="item in filteredList">
                 <Item  :item="item"/>
-            </li>
-        </ul>
-    </div>
-
+            </b-col>
+        </b-row>
+    </b-container>
 </template>
 
 <script>
@@ -44,42 +45,8 @@
 </script>
 
 <style  lang="scss">
-    .items-wrapper {
-        width: 60%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-
-        .input-group {
-            margin: 50px auto;
-            border: 1px solid #c0c0c029;
-
-            .search {
-                height: 25px;
-                width: 200px;
-                border-radius: 3px;
-                color: silver;
-                background-color: #fff;
-                border: 0;
-                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
-                cursor: pointer;
-                outline: none;
-                padding: 5px;
-                position: relative;
-            }
-        }
-        .food-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            list-style: none;
-
-            .food-item {
-                animation-duration: .2s;
-                animation-name: bounceIn;
-                animation-timing-function: ease;
-            }
-        }
+    .form-control {
+        width: 50%;
     }
+
 </style>
