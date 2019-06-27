@@ -33,13 +33,18 @@
 
 <style  lang="scss">
     .card {
-        width: 200px;
+        width: 17.5%;
         height: auto;
         background: white;
         margin: 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        img {
+            width: 200px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
 
         .description {
          text-align: center;
@@ -55,13 +60,13 @@
                 color: rgb(134, 134, 134);
             }
             .description-price {
-                color: orangered;
+                color:  #f1b601;
                 margin-bottom: 10px;
             }
         }
         .buy {
             width: 80%;
-            background-color: orangered;
+            background: #f1b601;
             border: none;
             color: white;
             margin: 10px auto;

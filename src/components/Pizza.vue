@@ -1,6 +1,6 @@
 <template>
     <section class="item-component-wrapper">
-        <button class="go-back" @click="goToMain">Go Back</button>
+<!--        <button class="go-back" @click="goToMain">Go Back</button>-->
         <div v-for="item in items" :key="item.id">
             <div class="type" v-if="item.type === 'pizza'">
                 <h1 class="item-header">{{item.name}}</h1>
@@ -31,6 +31,7 @@
         display: flex;
         width: 100%;
         height: 100vh;
+        margin-left: 20px;
 
         .go-back {
             position: absolute;

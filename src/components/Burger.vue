@@ -1,6 +1,5 @@
 <template>
     <section class="item-component-wrapper">
-        <button class="go-back" @click="goToMain">Go Back</button>
         <div v-for="item in items" :key="item.id">
             <div class="type" v-if="item.type === 'burger'">
                 <h1 class="item-header">{{item.name}}</h1>
@@ -16,11 +15,6 @@
     components: {Card},
     props: {
       items: Array,
-    },
-    methods: {
-      goToMain() {
-        this.$router.go(-1);
-      }
     }
   }
 </script>

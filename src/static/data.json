@@ -3,45 +3,45 @@
     "id": 1,
     "name": "Pizza",
     "type": "pizza",
-    "image": "pizza.jpg",
+    "image": "pizza-slice",
     "allItems": [ {
       "id": 1,
       "name":"Pizza Diablo",
       "description": "Description text about product",
-      "photo": "diabola.jpg",
+      "photo": "p-img1.png",
       "price": "12"
     },{
       "id": 2,
       "name":" Pizza Garage",
       "description": "Description text about product",
-      "photo": "garage.jpg",
+      "photo": "p-img2.png",
       "price": "6"
     },{
       "id": 3,
       "name":" Pizza Garage",
       "description": "Description text about product",
-      "photo": "garage.jpg",
+      "photo": "p-img3.png",
       "price": "3"
     },
       {
         "id": 4,
         "name":" Pizza Garage",
         "description": "Description text about product",
-        "photo": "garage.jpg",
+        "photo": "p-img4.png",
         "price": "7"
       },
       {
         "id": 5,
         "name":" Pizza Garage",
         "description": "Description text about product",
-        "photo": "garage.jpg",
+        "photo": "p-img5.png",
         "price": "3"
       },
       {
         "id": 6,
         "name":" Pizza Garage",
         "description": "Description text about product",
-        "photo": "garage.jpg",
+        "photo": "p-img6.png",
         "price": "6"
       }
     ,
@@ -49,7 +49,7 @@
         "id": 7,
         "name":" Pizza Garage",
         "description": "Description text about product",
-        "photo": "garage.jpg",
+        "photo": "p-img7.png",
         "price": "4"
       }
     ,
@@ -57,7 +57,7 @@
         "id": 8,
         "name":" Pizza Garage",
         "description": "Description text about product",
-        "photo": "garage.jpg",
+        "photo": "p-img8.png",
         "price": "3"
       }],
     "link": "/pizza"
@@ -66,54 +66,62 @@
     "id": 2,
     "name": "Salad",
      "type": "salad",
-    "image": "salad.jpg",
+    "image": "seedling",
      "link": "/salad",
      "allItems": [ {
+       "id": 9,
        "name":"Salad Cesar",
        "description": "Description text about product",
-       "photo": "cesar.jpg",
+       "photo": "sld.png",
        "price": "4"
      },{
+       "id": 10,
        "name":"Salad Bowl of Life",
        "description": "Description text about product",
-       "photo": "life.jpg",
+       "photo": "salad1.png",
        "price": "3"
      },{
+       "id": 11,
        "name":"Salad Bowl of Life",
        "description": "Description text about product",
-       "photo": "life.jpg",
+       "photo": "salad7.png",
        "price": "3"
      },
        {
+         "id": 12,
          "name":"Salad Bowl of Life",
          "description": "Description text about product",
-         "photo": "life.jpg",
+         "photo": "salad3.png",
          "price": "2"
        },
        {
+         "id": 13,
          "name":"Salad Bowl of Life",
          "description": "Description text about product",
-         "photo": "life.jpg",
+         "photo": "salad4.png",
          "price": "9"
        },
        {
+         "id": 14,
          "name":"Salad Bowl of Life",
          "description": "Description text about product",
-         "photo": "life.jpg",
+         "photo": "salad5.png",
          "price": "11"
        }
      ,
        {
+         "id": 15,
          "name":"Salad Bowl of Life",
          "description": "Description text about product",
-         "photo": "life.jpg",
+         "photo": "salad6.png",
          "price": "4"
        }
      ,
        {
+         "id": 16,
          "name":"Salad Bowl of Life",
          "description": "Description text about product",
-         "photo": "life.jpg",
+         "photo": "salad8.png",
          "price": "3"
        }]
    },
@@ -121,54 +129,62 @@
     "id": 3,
     "name": "Burgers",
     "type": "burger",
-    "image": "burger.jpg",
+    "image": "hamburger",
     "link": "/burger",
    "allItems": [ {
+     "id": 17,
      "name":"Burger",
      "description": "Description text about product",
-     "photo": "burgers.jpg",
+     "photo": "burger.png",
      "price": "4"
    },{
-     "name":"Salad Bowl of Life",
+     "id": 18,
+     "name":"Burger",
      "description": "Description text about product",
-     "photo": "burgers.jpg",
+     "photo": "burger2.png",
      "price": "3"
    },{
-     "name":"Salad Bowl of Life",
+     "id": 19,
+     "name":"Burger",
      "description": "Description text about product",
-     "photo": "burgers.jpg",
+     "photo": "bgr1.png",
      "price": "3"
    },
      {
-       "name":"Salad Bowl of Life",
+       "id": 20,
+       "name":"Burger",
        "description": "Description text about product",
-       "photo": "burgers.jpg",
+       "photo": "burger3.png",
        "price": "2"
      },
      {
-       "name":"Salad Bowl of Life",
+       "id": 21,
+       "name":"Burger",
        "description": "Description text about product",
-       "photo": "burgers.jpg",
+       "photo": "burger4.png",
        "price": "3"
      },
      {
-       "name":"Salad Bowl of Life",
+       "id": 22,
+       "name":"Burger",
        "description": "Description text about product",
-       "photo":"burgers.jpg",
+       "photo":"burger5.png",
        "price": "3"
      }
    ,
      {
-       "name":"Salad Bowl of Life",
+       "id": 23,
+       "name":"Burger",
        "description": "Description text about product",
-       "photo": "burgers.jpg",
+       "photo": "burger6.png",
        "price": "4"
      }
    ,
      {
-       "name":"Salad Bowl of Life",
+       "id": 24,
+       "name":"Burger",
        "description": "Description text about product",
-       "photo": "burgers.jpg",
+       "photo": "burger7.png",
        "price": "3"
      }]
  },
@@ -206,7 +222,7 @@
         "price": "3"
       }
      ],
-    "image": "drinks.jpg"
+    "image": "wine-bottle"
   },
  {
     "id": 5,

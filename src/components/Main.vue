@@ -1,61 +1,50 @@
 <template>
     <section class="main">
         <ShoppingCart class="shopping-card"/>
-        <router-view :items="forSale" ></router-view>
+        <AllItems :items="forSale"></AllItems>
+        <transition name="fade" mode="out-in">
+            <router-view :items="forSale"></router-view>
+        </transition>
     </section>
 </template>
 <script>
-    import ShoppingCart from "./ShoppingCart.vue";
-    export default {
-        name: "Main",
-      components: {ShoppingCart},
-      data() {
-            return {
+  import ShoppingCart from "./ShoppingCart.vue";
+  import AllItems from "./AllItems.vue";
 
-            }
-        },
-        methods: {
-        },
-        computed: {
-            forSale() { return this.$store.getters.forSale; },
-            inCart() { return this.$store.getters.inCart; },
-        },
-    }
+  export default {
+    name: "Main",
+    components: {AllItems, ShoppingCart},
+    data() {
+      return {}
+    },
+    computed: {
+      forSale() {
+        return this.$store.getters.forSale;
+      },
+      inCart() {
+        return this.$store.getters.inCart;
+      },
+    },
+  }
 
 </script>
 
 <style scoped lang="scss">
+
     .main {
-        background: #e4e4e4;
+        background: rgba(228, 228, 228, 0.4);
         display: flex;
-        flex-direction: column;
-        align-items: center;
+
         .shopping-card {
             position: absolute;
-            right: 20%;
+            right: 10%;
         }
     }
 
-    @keyframes bounceIn {
-        0% {
-            transform: scale(0.5);
-            opacity: 0;
-        }
-        25% {
-            transform: scale(0.6);
-            opacity: .2;
-        }
-        50% {
-            transform: scale(0.7);
-            opacity: .5;
-        }
-        75% {
-            transform: scale(0.8);
-            opacity: .7;
-        }
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .2s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
     }
 </style>
