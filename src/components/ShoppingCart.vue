@@ -6,7 +6,8 @@
                 <font-awesome-icon icon="shopping-cart"/>
                 ({{ numInCart }})
             </b-button>
-            <b-modal id="modal-1" title="Cart">
+            <b-modal id="modal-1" ref="modal-1" title="Cart"
+                     :cancel-disabled="true">
                 <table class="table">
                     <b-list-group v-for="(item, index) in cart" :key="item.id">
                         <b-list-group-item class="d-flex justify-content-between align-items-center">{{ item.name}}
@@ -16,64 +17,101 @@
                         </b-list-group-item>
                     </b-list-group>
                     <span class="total d-flex justify-content-around align-items-center"> Total:
-                     <b-badge @click="submit" variant="primary" pill>{{ total | dollars }}</b-badge>
+                     <b-badge variant="primary" pill>{{ total | dollars }}</b-badge>
                     </span>
                 </table>
+                <div slot="modal-footer" class="w-100">
+                    <p class="float-left">Modal Footer Content</p>
+                    <b-button
+                            variant="primary"
+                            size="sm"
+                            class="float-right"
+                            @click="submit"
+                    >
+                        Close
+                    </b-button>
+                </div>
             </b-modal>
         </div>
     </div>
 </template>
 
 <script>
-  import {dollars} from '../filters.js';
-  import db from '../fb.js';
+    import {dollars} from '../filters.js';
+    import db from '../fb.js';
 
-  export default {
-    name: "ShoppingCart",
-    filters: {
-      dollars
-    },
-    data() {
-      return {
-        locations: []
-      }
-    },
-    methods: {
-      submit() {
-        this.locations = db.collection('history');
-        const project = {
-          name: "Maaaaaaa",
-          age: 22222222
-        };
-        db.collection('history').add(project).then(() => {
-          console.log('added to db');
-        });
-        db.collection("history")
-          .get()
-          .then(querySnapshot => {
-            const data = querySnapshot.docs.map(doc => doc.data());
-            console.log(data); // array of cities objects
-          });
-      },
-      removeFromCart(index) {
-        this.$store.dispatch('removeFromCart', index);
-      }
-    },
-    computed: {
-      inCart() {
-        return this.$store.getters.inCart;
-      },
-      numInCart() {
-        return this.inCart.length;
-      },
-      cart() {
-        return this.$store.getters.inCart;
-      },
-      total() {
-        return this.cart.reduce((a, b) => a + +b.price, 0);
-      },
+    export default {
+        name: "ShoppingCart",
+        filters: {
+            dollars
+        },
+        data() {
+            return {
+                allItems: []
+            }
+        },
+        methods: {
+            submit() {
+                this.$refs['modal-1'].hide();
+                 this.allItems = db.collection('history');
+                 console.log(this.inCart);
+                // this.inCart.forEach((element,idx) => {
+                //     // const item = {
+                //     //     id: element.id,
+                //     //     name: element.name,
+                //     //     price: element.price
+                //     // };
+                // });
+                const bill = [...this.inCart];
+                    db.collection("history").doc("bills").update({
+                        bill
+                    })
+                        .then(function() {
+                            console.log("Document successfully written!");
+                        })
+                        .catch(function(error) {
+                            console.error("Error writing document: ", error);
+                        });
+                    // db.collection("history").doc("bills").update({
+                    //     regions: db.FieldValue.arrayUnion("greater_virginia")
+                    // });
+                    //
+                    // db.collection('bills').add({element}).then(() => {
+                    //     console.log('added to db');
+                    // });
+
+
+
+
+
+
+
+                db.collection("history")
+                    .get()
+                    .then(querySnapshot => {
+                        const data = querySnapshot.docs.map(doc => doc.data());
+                        console.log(data);
+                    });
+            },
+            removeFromCart(index) {
+                this.$store.dispatch('removeFromCart', index);
+            }
+        },
+        computed: {
+            inCart() {
+                return this.$store.getters.inCart;
+            },
+            numInCart() {
+                return this.inCart.length;
+            },
+            cart() {
+                return this.$store.getters.inCart;
+            },
+            total() {
+                return this.cart.reduce((a, b) => a + +b.price, 0);
+            },
+        }
     }
-  }
 </script>
 
 <style lang="scss">
