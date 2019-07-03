@@ -33,7 +33,6 @@
         .type {
             display: flex;
             flex-wrap: wrap;
-            background: #e4e4e4;
 
             .item-header {
                 width: 100%;

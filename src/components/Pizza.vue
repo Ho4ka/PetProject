@@ -31,7 +31,7 @@
         display: flex;
         width: 100%;
         height: 100vh;
-        margin-left: 20px;
+        background: rgba(228, 228, 228, 0.4);
 
         .go-back {
             position: absolute;
@@ -40,7 +40,6 @@
         .type {
             display: flex;
             flex-wrap: wrap;
-            background: #e4e4e4;
 
             .item-header {
                 width: 100%;

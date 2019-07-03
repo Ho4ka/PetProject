@@ -1,8 +1,6 @@
 <template>
     <div class="all-items">
-        <div :key="item.id" v-for="item in items">
-            <Item :item="item"/>
-        </div>
+        <Item :key="item.id" v-for="item in items" :item="item"/>
     </div>
 </template>
 
@@ -21,6 +19,9 @@
 </script>
 
 <style lang="scss">
+    .all-items {
+        background: rgba(228, 228, 228, 0.4);
+    }
     .form-control {
         width: 50%;
     }

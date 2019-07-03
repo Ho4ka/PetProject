@@ -1,9 +1,6 @@
 <template>
     <section class="main">
         <ShoppingCart class="shopping-card"/>
-        <router-link to='/history'>
-            <button>History</button>
-        </router-link>
         <AllItems :items="forSale"></AllItems>
         <transition name="fade" mode="out-in">
             <router-view :items="forSale"></router-view>

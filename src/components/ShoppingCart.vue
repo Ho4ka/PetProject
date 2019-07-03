@@ -6,6 +6,9 @@
                 <font-awesome-icon icon="shopping-cart"/>
                 ({{ numInCart }})
             </b-button>
+            <router-link to='/history'>
+                <button>History</button>
+            </router-link>
             <b-modal id="modal-1" ref="modal-1" title="Cart"
                      :cancel-disabled="true">
                 <table class="table">
@@ -37,81 +40,63 @@
 </template>
 
 <script>
-    import {dollars} from '../filters.js';
-    import db from '../fb.js';
+  import {dollars} from '../filters.js';
+  import db from '../fb.js';
+  import moment from "moment";
 
-    export default {
-        name: "ShoppingCart",
-        filters: {
-            dollars
-        },
-        data() {
-            return {
-                allItems: []
-            }
-        },
-        methods: {
-            submit() {
-                this.$refs['modal-1'].hide();
-                 this.allItems = db.collection('history');
-                 console.log(this.inCart);
-                // this.inCart.forEach((element,idx) => {
-                //     // const item = {
-                //     //     id: element.id,
-                //     //     name: element.name,
-                //     //     price: element.price
-                //     // };
-                // });
-                const bill = [...this.inCart];
-                    db.collection("history").doc("bills").update({
-                        bill
-                    })
-                        .then(function() {
-                            console.log("Document successfully written!");
-                        })
-                        .catch(function(error) {
-                            console.error("Error writing document: ", error);
-                        });
-                    // db.collection("history").doc("bills").update({
-                    //     regions: db.FieldValue.arrayUnion("greater_virginia")
-                    // });
-                    //
-                    // db.collection('bills').add({element}).then(() => {
-                    //     console.log('added to db');
-                    // });
+  export default {
+    name: "ShoppingCart",
+    filters: {
+      dollars
+    },
+    data() {
+      return {
+        allItems: []
+      }
+    },
+    methods: {
+      submit() {
+        this.$refs['modal-1'].hide();
+        this.allItems = db.collection('history');
+        const bill = [...this.inCart];
+        db.collection("history").add({
+          bill,
+          data: moment().format('MMMM Do YYYY, h:mm:ss a')
+        })
+          .then(function () {
+            console.log("Document successfully written!");
+          })
+          .catch(function (error) {
+            console.error("Error writing document: ", error);
+          });
 
 
-
-
-
-
-
-                db.collection("history")
-                    .get()
-                    .then(querySnapshot => {
-                        const data = querySnapshot.docs.map(doc => doc.data());
-                        console.log(data);
-                    });
-            },
-            removeFromCart(index) {
-                this.$store.dispatch('removeFromCart', index);
-            }
-        },
-        computed: {
-            inCart() {
-                return this.$store.getters.inCart;
-            },
-            numInCart() {
-                return this.inCart.length;
-            },
-            cart() {
-                return this.$store.getters.inCart;
-            },
-            total() {
-                return this.cart.reduce((a, b) => a + +b.price, 0);
-            },
-        }
+        db.collection("history")
+          .get()
+          .then(querySnapshot => {
+            const data = querySnapshot.docs.map(doc => doc.data());
+            console.log(data);
+          });
+      },
+      removeFromCart(index) {
+        this.$store.dispatch('removeFromCart', index);
+      }
+    },
+    computed: {
+      inCart() {
+        return this.$store.getters.inCart;
+      },
+      numInCart() {
+        return this.inCart.length;
+      },
+      cart() {
+        return this.$store.getters.inCart;
+      },
+      total() {
+        return this.cart.reduce((a, b) => a + +b.price, 0);
+      },
     }
+  }
 </script>
 
 <style lang="scss">

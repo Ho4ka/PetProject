@@ -1,7 +1,7 @@
 <template>
     <router-link :to='`${item.link}`'>
         <div class="item-wrapper">
-            <h4 class="item-header">{{item.name}}</h4>
+<!--            <h4 class="item-header">{{item.name}}</h4>-->
             <font-awesome-icon class="icon fa-5x" :icon="item.image"/>
         </div>
     </router-link>
