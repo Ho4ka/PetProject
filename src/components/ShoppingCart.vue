@@ -13,25 +13,26 @@
                      :cancel-disabled="true">
                 <table class="table">
                     <b-list-group v-for="(item, index) in cart" :key="item.id">
-                        <b-list-group-item class="d-flex justify-content-between align-items-center">{{ item.name}}
-                            <b-badge variant="success" pill>{{ item.price | dollars }}
-                                <font-awesome-icon @click="removeFromCart(index)" icon="trash"/>
+                        <b-list-group-item class="d-flex justify-content-between align-items-center"> <img :src="getImgUrl(item.photo)"  width="50px" height="50px" alt=""> {{ item.name}}
+                           <div class="item-price">
+                            <b-badge variant="warning" pill>{{ item.price | dollars }}
                             </b-badge>
+                            <font-awesome-icon class="trash" @click="removeFromCart(index)" icon="trash"/>
+                           </div>
                         </b-list-group-item>
                     </b-list-group>
                     <span class="total d-flex justify-content-around align-items-center"> Total:
-                     <b-badge variant="primary" pill>{{ total | dollars }}</b-badge>
+                     <b-badge variant="warning" pill>{{ total | dollars }}</b-badge>
                     </span>
                 </table>
                 <div slot="modal-footer" class="w-100">
-                    <p class="float-left">Modal Footer Content</p>
                     <b-button
                             variant="primary"
                             size="sm"
                             class="float-right"
                             @click="submit"
                     >
-                        Close
+                        APPLY
                     </b-button>
                 </div>
             </b-modal>
@@ -42,7 +43,6 @@
 <script>
   import {dollars} from '../filters.js';
   import db from '../fb.js';
-  import moment from "moment";
 
   export default {
     name: "ShoppingCart",
@@ -61,7 +61,8 @@
         const bill = [...this.inCart];
         db.collection("history").add({
           bill,
-          data: moment().format('MMMM Do YYYY, h:mm:ss a')
+          date: Date.now(),
+            total: this.total
         })
           .then(function () {
             console.log("Document successfully written!");
@@ -77,10 +78,18 @@
             const data = querySnapshot.docs.map(doc => doc.data());
             console.log(data);
           });
+        this.clearCart();
       },
       removeFromCart(index) {
         this.$store.dispatch('removeFromCart', index);
-      }
+      },
+        clearCart() {
+            this.$store.dispatch('clearCart');
+        }
+        ,
+        getImgUrl(i) {
+            return 'src/assets/images/' + i;
+        }
     },
     computed: {
       inCart() {
@@ -99,7 +108,7 @@
   }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
     .in-cart {
         width: 70px;
     }
@@ -110,9 +119,21 @@
 
     .list-group-item {
         box-shadow: 0 0 10px rgba(73, 74, 78, .1);
+        border: none;
     }
 
     .total {
         margin-top: 25px;
+    }
+
+    .item-price {
+        width: 113px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .trash {
+        color: silver;
+        cursor: pointer;
     }
 </style>

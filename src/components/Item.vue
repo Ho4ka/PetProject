@@ -1,7 +1,6 @@
 <template>
     <router-link :to='`${item.link}`'>
         <div class="item-wrapper">
-<!--            <h4 class="item-header">{{item.name}}</h4>-->
             <font-awesome-icon class="icon fa-5x" :icon="item.image"/>
         </div>
     </router-link>
@@ -48,7 +47,7 @@
         }
     }
 
-    .router-link-active>.item-wrapper:before {
+    .is-active .item-wrapper:before {
             content: "";
             -webkit-clip-path: polygon(100% 0, 35% 51%, 100% 100%);
             clip-path: polygon(100% 0, 35% 51%, 100% 100%);

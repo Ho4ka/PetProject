@@ -19,9 +19,6 @@
 </script>
 
 <style lang="scss">
-    .all-items {
-        background: rgba(228, 228, 228, 0.4);
-    }
     .form-control {
         width: 50%;
     }

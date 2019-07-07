@@ -14,6 +14,11 @@
     import { dollars } from '../filters.js';
     export default {
         name: "Card",
+        data() {
+            return {
+                count: 0
+            }
+        },
         filters:{
           dollars
         },
@@ -26,14 +31,54 @@
             },
             addToCart(invId) {
                 this.$store.dispatch('addToCart', invId);
+                this.makeToast('b-toaster-top-center', invId);
             },
+            makeToast(toaster,invId) {
+                console.log(invId)
+                // this.$bvToast.toast('Toast body content', {
+                //     title: `Variant ${variant || 'default'}`,
+                //     variant: variant,
+                //     toaster: toaster,
+                //     solid: true
+                // })
+                const h = this.$createElement;
+                // Increment the toast count
+                this.count++;
+                // Create the message
+                const vNodesMsg = h(
+                    'p',
+                    { class: ['text-center', 'mb-0'] },
+                    [
+                        h('b-spinner', { props: { type: 'grow', big: true } }),
+                        '  ',
+                        h('strong', {}, `${invId.name}`),
+                        h('b-spinner', { props: { type: 'grow', big: true } })
+                    ]
+                )
+                // Create the title
+                const vNodesTitle = h(
+                    'div',
+                    { class: ['d-flex', 'flex-grow-1', 'align-items-baseline', 'mr-2'] },
+                    [
+                        h('strong', { class: 'mr-2' }, 'Item was added'),
+                        // h('small', { class: 'ml-auto text-italics' }, '5 minutes ago')
+                    ]
+                )
+                // Pass the vNodes as an array for message and title
+                this.$bvToast.toast([vNodesMsg], {
+                    title: [vNodesTitle],
+                    solid: true,
+                    toaster: toaster,
+                    variant: 'warning'
+                })
+            }
         }
     }
 </script>
 
 <style  lang="scss">
     .card {
-        width: 17.5%;
+        width: 21.7%;
         height: auto;
         background: white;
         margin: 20px;
