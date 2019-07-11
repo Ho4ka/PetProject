@@ -19,7 +19,7 @@
   }
 </script>
 
-<style  lang="scss">
+<style scoped  lang="scss">
 
     .item-component-wrapper {
         display: flex;

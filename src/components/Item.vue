@@ -19,6 +19,7 @@
 </script>
 
 <style  lang="scss">
+
     .item-wrapper {
         display: flex;
         flex-direction: column;
@@ -35,6 +36,11 @@
         -moz-transition: all .5s ease-out;
         -o-transition: all .5s ease-out;
         -webkit-transition: all .5s ease-out;
+
+        .test {
+            width: 25px;
+            height: 25px;
+        }
         .icon {
             color: white;
         }
@@ -47,22 +53,8 @@
         }
     }
 
-    .is-active .item-wrapper:before {
-            content: "";
-            -webkit-clip-path: polygon(100% 0, 35% 51%, 100% 100%);
-            clip-path: polygon(100% 0, 35% 51%, 100% 100%);
-            width: 25px;
-            height: 25px;
-            background: #f7f7f7;
-            position: absolute;
-            top: 50%;
-            left: 175px;
-            z-index: 1111111;
-            -webkit-transform: translateY(-50%);
-            -moz-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            -o-transform: translateY(-50%);
-            transform: translateY(-50%);
+    .is-active .item-wrapper {
+        background: rgba(241, 182, 1, 0.73);
     }
 
 </style>

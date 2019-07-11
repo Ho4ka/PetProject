@@ -25,13 +25,12 @@
     }
 </script>
 
-<style  lang="scss">
+<style scoped lang="scss">
 
     .item-component-wrapper {
         display: flex;
         width: 100%;
         height: 100vh;
-        background: rgba(228, 228, 228, 0.4);
 
         .go-back {
             position: absolute;

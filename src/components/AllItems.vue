@@ -22,5 +22,4 @@
     .form-control {
         width: 50%;
     }
-
 </style>

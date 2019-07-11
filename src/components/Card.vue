@@ -34,13 +34,6 @@
                 this.makeToast('b-toaster-top-center', invId);
             },
             makeToast(toaster,invId) {
-                console.log(invId)
-                // this.$bvToast.toast('Toast body content', {
-                //     title: `Variant ${variant || 'default'}`,
-                //     variant: variant,
-                //     toaster: toaster,
-                //     solid: true
-                // })
                 const h = this.$createElement;
                 // Increment the toast count
                 this.count++;
@@ -54,16 +47,15 @@
                         h('strong', {}, `${invId.name}`),
                         h('b-spinner', { props: { type: 'grow', big: true } })
                     ]
-                )
+                );
                 // Create the title
                 const vNodesTitle = h(
                     'div',
                     { class: ['d-flex', 'flex-grow-1', 'align-items-baseline', 'mr-2'] },
                     [
                         h('strong', { class: 'mr-2' }, 'Item was added'),
-                        // h('small', { class: 'ml-auto text-italics' }, '5 minutes ago')
                     ]
-                )
+                );
                 // Pass the vNodes as an array for message and title
                 this.$bvToast.toast([vNodesMsg], {
                     title: [vNodesTitle],
@@ -78,7 +70,7 @@
 
 <style  lang="scss">
     .card {
-        width: 21.7%;
+        width: 17.6%;
         height: auto;
         background: white;
         margin: 20px;
@@ -114,7 +106,7 @@
             background: #f1b601;
             border: none;
             color: white;
-            margin: 10px auto;
+            margin: 30px auto;
             padding: 10px 27px;
             text-align: center;
             text-decoration: none;
