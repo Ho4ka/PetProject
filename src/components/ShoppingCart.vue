@@ -32,7 +32,7 @@
                             class="float-right"
                             @click="submit"
                     >
-                        APPLY
+                        Order printing
                     </b-button>
                 </div>
             </b-modal>

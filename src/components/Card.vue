@@ -6,7 +6,7 @@
            <div class="description-text">{{ pos.description }}</div>
             <div class="description-price"> {{ pos.price | dollars }}</div>
         </div>
-        <button class="buy" @click="addToCart(pos)">Buy item</button>
+        <button class="buy" @click="addToCart(pos)">Add to order</button>
     </div>
 </template>
 
