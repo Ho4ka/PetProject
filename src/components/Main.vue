@@ -1,27 +1,24 @@
 <template>
-    <section class="main">
+    <section class="">
+        <Header/>
+        <section  class="main">
         <ShoppingCart class="shopping-card"/>
         <AllItems :items="forSale"></AllItems>
-        <router-link v-if="!auth" to='/auth/signup'>
-            <button>SingUp</button>
-        </router-link>
-        <router-link v-if="!auth" to='/auth/signin'>
-            <button>SingIn</button>
-        </router-link>
-        <button v-if="auth" @click="onLogout">Logout</button>
         <h1 v-if="name"> {{ name }}</h1>
         <transition name="fade" mode="out-in">
             <router-view :items="forSale"></router-view>
         </transition>
+        </section>
     </section>
 </template>
 <script>
     import ShoppingCart from "./ShoppingCart.vue";
     import AllItems from "./AllItems.vue";
+    import Header from "./Header.vue";
 
     export default {
         name: "Main",
-        components: {AllItems, ShoppingCart},
+        components: {Header, AllItems, ShoppingCart},
         data() {
             return {}
         },
@@ -56,7 +53,6 @@
     .main {
         background: rgba(228, 228, 228, 0.4);
         display: flex;
-
         .shopping-card {
             position: absolute;
             right: 10%;

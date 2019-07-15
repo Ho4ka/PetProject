@@ -49,7 +49,6 @@ export default new Vuex.Store({
                         token: res.data.idToken,
                         userId: res.data.localId,
                     });
-                    // debugger;
                     dispatch('storeUser', authData);
                 })
                 .catch(error => console.log(error))
@@ -80,6 +79,7 @@ export default new Vuex.Store({
             }
             axios.post('https://petproject-c4eb1.firebaseio.com/users.json' + '?auth=' + state.idToken, userData)
                 .then(res =>  {
+                    console.log(res)
                     commit('storeUser', userData);
                 })
                 .catch(error => console.log(error))
