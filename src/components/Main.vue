@@ -4,7 +4,6 @@
         <section  class="main">
         <ShoppingCart class="shopping-card"/>
         <AllItems :items="forSale"></AllItems>
-        <h1 v-if="name"> {{ name }}</h1>
         <transition name="fade" mode="out-in">
             <router-view :items="forSale"></router-view>
         </transition>
@@ -23,9 +22,7 @@
             return {}
         },
         methods: {
-            onLogout() {
-                this.$store.dispatch('logout');
-            }
+
         },
         computed: {
             forSale() {
@@ -34,15 +31,13 @@
             inCart() {
                 return this.$store.getters.inCart;
             },
-            name() {
-                return !this.$store.getters.user ? false : this.$store.getters.user.name;
-            },
             auth(){
                 return this.$store.getters.isAuthenticated;
             }
         },
         created(){
             this.$store.dispatch('fetchUser');
+            this.$store.commit('clearAuthData');
         }
     }
 

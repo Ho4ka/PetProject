@@ -1,10 +1,11 @@
 <template>
   <header id="header">
     <div class="logo">
-      <router-link to="/">Vue - Complete Guide</router-link>
+      <router-link to="/">Food order</router-link>
     </div>
     <nav>
       <ul>
+        <li style="color: white">{{ user  }}</li>
         <li v-if="!auth">
           <router-link to="/auth/signup">Sign Up</router-link>
         </li>
@@ -24,11 +25,18 @@
     computed: {
       auth () {
         return this.$store.getters.isAuthenticated
+      },
+      name() {
+        return !this.$store.getters.user ? false : this.$store.getters.user;
+      },
+      user(){
+        return this.$store.getters.user;
       }
     },
     methods: {
       onLogout() {
-        this.$store.dispatch('logout')
+        this.$store.dispatch('logout');
+        this.$store.dispatch('clearAuthData');
       }
     }
   }

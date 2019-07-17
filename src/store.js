@@ -29,6 +29,7 @@ export default new Vuex.Store({
         clearAuthData(state) {
             state.idToken = null;
             state.userId = null;
+            state.user = null;
         }
         },
     actions: {
@@ -44,10 +45,10 @@ export default new Vuex.Store({
                     returnSecureToken: true
                 })
                 .then(res => {
-                    console.log(res);
                     commit('authUser', {
                         token: res.data.idToken,
                         userId: res.data.localId,
+                        name: res.data.name
                     });
                     dispatch('storeUser', authData);
                 })
@@ -61,12 +62,12 @@ export default new Vuex.Store({
                     returnSecureToken: true
                 })
                 .then(res => {
-                    console.log(res);
                     commit('authUser', {
                         token: res.data.idToken,
                         userId: res.data.localId
                     });
-                    dispatch('storeUser', authData);
+                    // dispatch('storeUser', authData);
+                    // dispatch('fetchUser');
                 })
                 .catch(error => console.log(error))
         },
@@ -79,7 +80,6 @@ export default new Vuex.Store({
             }
             axios.post('https://petproject-c4eb1.firebaseio.com/users.json' + '?auth=' + state.idToken, userData)
                 .then(res =>  {
-                    console.log(res)
                     commit('storeUser', userData);
                 })
                 .catch(error => console.log(error))
