@@ -21,9 +21,6 @@
         data() {
             return {}
         },
-        methods: {
-
-        },
         computed: {
             forSale() {
                 return this.$store.getters.forSale;

@@ -7,7 +7,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 
 import routes from './routes.js';
-import store from './store';
+import store from './store/store';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faShoppingCart, faTrash, faPizzaSlice, faSeedling, faHamburger, faWineBottle} from '@fortawesome/free-solid-svg-icons'
