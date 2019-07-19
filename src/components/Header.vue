@@ -3,8 +3,16 @@
     <div class="logo">
       <router-link to="/">Food order</router-link>
     </div>
-    <nav>
-      <ul>
+    <nav >
+      <ul class="d-flex align-items-center">
+        <li>
+          <router-link to='/history'>
+            <button>History</button>
+          </router-link>
+        </li>
+        <li>
+          <ShoppingCart class="shopping-card"/>
+        </li>
         <li style="color: white">{{ user  }}</li>
         <li v-if="!auth">
           <router-link to="/auth/signup">Sign Up</router-link>
@@ -21,7 +29,9 @@
 </template>
 
 <script>
+  import ShoppingCart from "./ShoppingCart.vue";
   export default {
+    components: { ShoppingCart },
     computed: {
       auth () {
         return this.$store.getters.isAuthenticated
@@ -71,10 +81,10 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 100%;
     height: 100%;
     display: flex;
-    flex-flow: row;
-    align-items: center;
+   align-items: center;
   }
 
   li {

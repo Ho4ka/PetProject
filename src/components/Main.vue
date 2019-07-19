@@ -1,23 +1,18 @@
 <template>
-    <section class="">
-        <Header/>
         <section  class="main">
-        <ShoppingCart class="shopping-card"/>
         <AllItems :items="forSale"></AllItems>
         <transition name="fade" mode="out-in">
             <router-view :items="forSale"></router-view>
         </transition>
         </section>
-    </section>
+
 </template>
 <script>
-    import ShoppingCart from "./ShoppingCart.vue";
     import AllItems from "./AllItems.vue";
-    import Header from "./Header.vue";
 
     export default {
         name: "Main",
-        components: {Header, AllItems, ShoppingCart},
+        components: {AllItems},
         data() {
             return {}
         },
@@ -43,8 +38,9 @@
 <style scoped lang="scss">
 
     .main {
-        background: rgba(228, 228, 228, 0.4);
+        /*background: rgba(228, 228, 228, 0.4);*/
         display: flex;
+
         .shopping-card {
             position: absolute;
             right: 10%;

@@ -25,7 +25,7 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style  lang="scss">
 
     .item-component-wrapper {
         display: flex;
@@ -41,8 +41,9 @@
             flex-wrap: wrap;
 
             .item-header {
+                margin: 15px 0;
                 width: 100%;
-                color: #a9a9a9;
+                color: #333333;
                 text-align: center;
             }
         }

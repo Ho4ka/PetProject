@@ -11,7 +11,7 @@ import signin from './components/auth/signin.vue';
 
 
 const routes = [
-  { path: '', component: Main },
+  { path: '/', component: Main },
   { path: '/pizza', component: Pizza },
   { path: '/salad', component: Salad },
   { path: '/burger', component: Burger },

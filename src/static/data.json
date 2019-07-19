@@ -35,14 +35,14 @@
         "name":" Pizza Quattro Stagioni",
         "description": "Description text about product",
         "photo": "p-img5.png",
-        "price": "3"
+        "price": "3.00"
       },
       {
         "id": 6,
         "name":" Pizza Carbonara",
         "description": "Description text about product",
         "photo": "p-img6.png",
-        "price": "6"
+        "price": "6.00"
       }
     ,
       {
@@ -50,7 +50,7 @@
         "name":" Pizza Quattro Formaggi",
         "description": "Description text about product",
         "photo": "p-img7.png",
-        "price": "4"
+        "price": "4.00"
       }
     ,
       {
@@ -58,7 +58,7 @@
         "name":" Pizza Crudo",
         "description": "Description text about product",
         "photo": "p-img8.png",
-        "price": "3"
+        "price": "3.00"
       }],
     "link": "/pizza"
   },
@@ -73,40 +73,40 @@
        "name":"Salad Cesar",
        "description": "Description text about product",
        "photo": "sld.png",
-       "price": "4"
+       "price": "4.00"
      },{
        "id": 10,
        "name":"Salad Bowl of Life",
        "description": "Description text about product",
        "photo": "salad1.png",
-       "price": "3"
+       "price": "3.00"
      },{
        "id": 11,
        "name":"Salad Panzenella",
        "description": "Description text about product",
        "photo": "salad7.png",
-       "price": "3"
+       "price": "3.00"
      },
        {
          "id": 12,
          "name":"Salad Chicken Fajita",
          "description": "Description text about product",
          "photo": "salad3.png",
-         "price": "2"
+         "price": "2.00"
        },
        {
          "id": 13,
          "name":"Salad Asian Cucumber",
          "description": "Description text about product",
          "photo": "salad4.png",
-         "price": "9"
+         "price": "9.00"
        },
        {
          "id": 14,
          "name":"Salad Pink Detox",
          "description": "Description text about product",
          "photo": "salad5.png",
-         "price": "11"
+         "price": "11.00"
        }
      ,
        {
@@ -114,7 +114,7 @@
          "name":"Salad Chopped Greek",
          "description": "Description text about product",
          "photo": "salad6.png",
-         "price": "4"
+         "price": "4.00"
        }
      ,
        {
@@ -122,7 +122,7 @@
          "name":"Salad Mediterranean Quinoa",
          "description": "Description text about product",
          "photo": "salad8.png",
-         "price": "3"
+         "price": "3.00"
        }]
    },
  {
@@ -136,40 +136,40 @@
      "name":"Luger Burger",
      "description": "Description text about product",
      "photo": "burger.png",
-     "price": "4"
+     "price": "4.00"
    },{
      "id": 18,
      "name":" Le Pigeon Burger",
      "description": "Description text about product",
      "photo": "burger2.png",
-     "price": "3"
+     "price": "3.00"
    },{
      "id": 19,
      "name":"Double Animal Style Burger",
      "description": "Description text about product",
      "photo": "bgr1.png",
-     "price": "3"
+     "price": "3.00"
    },
      {
        "id": 20,
        "name":"The Original Burger Burger",
        "description": "Description text about product",
        "photo": "burger3.png",
-       "price": "2"
+       "price": "2.00"
      },
      {
        "id": 21,
        "name":" Whiskey King Burger",
        "description": "Description text about product",
        "photo": "burger4.png",
-       "price": "3"
+       "price": "3.00"
      },
      {
        "id": 22,
        "name":"The Company Burger",
        "description": "Description text about product",
        "photo":"burger5.png",
-       "price": "3"
+       "price": "3.00"
      }
    ,
      {
@@ -177,7 +177,7 @@
        "name":" Chargrilled Burger",
        "description": "Description text about product",
        "photo": "burger6.png",
-       "price": "4"
+       "price": "4.00"
      }
    ,
      {
@@ -185,7 +185,7 @@
        "name":"The Lola Burger",
        "description": "Description text about product",
        "photo": "burger7.png",
-       "price": "3"
+       "price": "3.00"
      }]
  }
 ]

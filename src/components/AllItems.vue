@@ -19,6 +19,7 @@
 </script>
 
 <style lang="scss">
+
     .form-control {
         width: 50%;
     }

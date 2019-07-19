@@ -1,14 +1,11 @@
 <template>
-    <div class="row mb-3">
+    <div class="row">
         <div class="shopping-cart col-md-3">
             <b-button class="in-cart d-flex justify-content-between align-items-center" v-b-modal.modal-1
                       variant="success" data-toggle="modal" data-target="#shoppingCart">
                 <font-awesome-icon icon="shopping-cart"/>
                 ({{ numInCart }})
             </b-button>
-            <router-link to='/history'>
-                <button>History</button>
-            </router-link>
             <b-modal id="modal-1" ref="modal-1" title="Cart"
                      :cancel-disabled="true">
                 <table class="table">
@@ -27,7 +24,7 @@
                 </table>
                 <div slot="modal-footer" class="w-100">
                     <b-button
-                            variant="primary"
+                            variant="warning"
                             size="sm"
                             class="float-right"
                             @click="submit"
@@ -135,5 +132,10 @@
     .trash {
         color: silver;
         cursor: pointer;
+    }
+
+    button {
+        color: #333333;
+        font-weight: bold;
     }
 </style>

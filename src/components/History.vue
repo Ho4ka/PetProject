@@ -1,8 +1,10 @@
 <template>
     <div class="history">
-        <button @click="sortedItems">Sort by date</button>
-        <button @click="sortByPrice">Sort by price</button>
+
         <ul class="order-list">
+            <li class="order-item first-line">
+                <button class="sort-item" @click="sortedItems">Sort by date</button>
+                <button class="sort-item" @click="sortByPrice">Sort by price</button></li>
             <li class="order-item" v-for="(bill, index) in bills" :key="index">
                 <h3 class="order-date">{{ bill.date | formatTime }}</h3>
                 <div class="order-detail">
@@ -83,6 +85,17 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
+            .first-line {
+                display: flex;
+                justify-content: space-between;
+            }
+            .sort-item {
+                border: none;
+                background: none;
+                outline: none;
+                font-weight: 700;
+                color: #f1b601;
+            }
 
             .order-item {
                 background: white;
@@ -105,11 +118,11 @@
 
                 .item-name {
                     color: #616161;
-                    font-weight: 800;
+                    font-weight: 700;
                 }
 
                 .item-price {
-                    font-weight: 800;
+                    font-weight: 700;
                 }
 
                 .item-box {
@@ -122,7 +135,7 @@
                 .item-total {
                     display: flex;
                     justify-content: space-between;
-                    font-weight: 800;
+                    font-weight: 700;
                 }
             }
         }

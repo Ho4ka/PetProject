@@ -19,11 +19,12 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style  lang="scss">
     .item-component-wrapper {
         display: flex;
         width: 100%;
-        height: 100vh;
+        height: 100%;
+
 
         .go-back {
             position: absolute;
@@ -33,10 +34,14 @@
         .type {
             display: flex;
             flex-wrap: wrap;
+            background-image: url("../assets/images/parallax.jpg");
+            background-size: cover;
+            background-position: center;
 
             .item-header {
+                margin: 15px 0;
                 width: 100%;
-                color: #a9a9a9;
+                color: #333333;
                 text-align: center;
             }
         }
