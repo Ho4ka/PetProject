@@ -1,6 +1,5 @@
 <template>
     <div class="history">
-
         <ul class="order-list">
             <li class="order-item first-line">
                 <button class="sort-item" @click="sortedItems">Sort by date</button>
@@ -19,6 +18,10 @@
                 </div>
                 <div class="item-total">
                     <span>Total: </span> <span>{{ bill.total | dollars }}</span>
+                </div>
+                <div class="waiter-data">
+                    <span class="waiter">Waiter: </span>
+                    <span class="waiter-name">{{bill.name}}</span>
                 </div>
 
             </li>
@@ -58,9 +61,9 @@
             sortByPrice() {
                 return this.bills.sort((a, b) => a.total - b.total);
 
-            }
+            },
+
         },
-        computed: {},
         created() {
             db.collection("history")
                 .get()
@@ -85,6 +88,7 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
+            overflow: scroll;
             .first-line {
                 display: flex;
                 justify-content: space-between;
@@ -138,6 +142,15 @@
                     font-weight: 700;
                 }
             }
+        }
+        .waiter {
+            color: #c10a28;
+            font-size: 23px;
+            font-weight: 500;
+        }
+        .waiter-name {
+            color: #521751;
+            font-weight: 500;
         }
     }
 </style>

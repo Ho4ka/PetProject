@@ -8,14 +8,15 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import routes from './routes.js';
 import store from './store/store';
+import Vuelidate from 'vuelidate';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faShoppingCart, faTrash, faPizzaSlice, faSeedling, faHamburger, faWineBottle} from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart, faTrash, faPizzaSlice, faSeedling, faHamburger, faWineBottle, faHistory} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
+Vue.use(Vuelidate);
 Vue.use(BootstrapVue);
 
-library.add(faShoppingCart,faTrash, faPizzaSlice, faSeedling, faHamburger, faWineBottle);
+library.add(faShoppingCart,faTrash, faPizzaSlice, faSeedling, faHamburger, faWineBottle, faHistory);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.filter('toUSD', function (value) {

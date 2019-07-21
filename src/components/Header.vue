@@ -7,13 +7,15 @@
       <ul class="d-flex align-items-center">
         <li>
           <router-link to='/history'>
-            <button>History</button>
+            <button class="btn btn-warning">
+              <font-awesome-icon class="icon-history" icon="history"/>
+            </button>
           </router-link>
         </li>
         <li>
           <ShoppingCart class="shopping-card"/>
         </li>
-        <li style="color: white">{{ user  }}</li>
+        <li class="waiter-name" v-if="name">{{ name }}</li>
         <li v-if="!auth">
           <router-link to="/auth/signup">Sign Up</router-link>
         </li>
@@ -37,10 +39,7 @@
         return this.$store.getters.isAuthenticated
       },
       name() {
-        return !this.$store.getters.user ? false : this.$store.getters.user;
-      },
-      user(){
-        return this.$store.getters.user;
+        return !this.$store.getters.user ? false : this.$store.getters.user.name;
       }
     },
     methods: {
@@ -75,6 +74,13 @@
 
   nav {
     height: 100%;
+  }
+
+  .waiter-name {
+    color: #f1b601;
+  }
+  .btn-warning:hover {
+    color: white;
   }
 
   ul {

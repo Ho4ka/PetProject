@@ -29,7 +29,7 @@
                             class="float-right"
                             @click="submit"
                     >
-                        Order printing
+                        Print Order
                     </b-button>
                 </div>
             </b-modal>
@@ -59,10 +59,11 @@
         db.collection("history").add({
           bill,
           date: Date.now(),
-            total: this.total
+            total: this.total,
+            name: this.name
         })
-          .then(function () {
-            console.log("Document successfully written!");
+          .then(function (res) {
+
           })
           .catch(function (error) {
             console.error("Error writing document: ", error);
@@ -89,6 +90,9 @@
         }
     },
     computed: {
+        name() {
+            return !this.$store.getters.user ? false : this.$store.getters.user.name;
+        },
       inCart() {
         return this.$store.getters.inCart;
       },
@@ -121,6 +125,9 @@
 
     .total {
         margin-top: 25px;
+        color: #c10a28;
+        font-size: 23px;
+        font-weight: 500;
     }
 
     .item-price {
@@ -136,6 +143,5 @@
 
     button {
         color: #333333;
-        font-weight: bold;
     }
 </style>

@@ -1,10 +1,10 @@
 <template>
-        <section  class="main">
+    <section class="main">
         <AllItems :items="forSale"></AllItems>
         <transition name="fade" mode="out-in">
             <router-view :items="forSale"></router-view>
         </transition>
-        </section>
+    </section>
 
 </template>
 <script>
@@ -23,11 +23,11 @@
             inCart() {
                 return this.$store.getters.inCart;
             },
-            auth(){
+            auth() {
                 return this.$store.getters.isAuthenticated;
             }
         },
-        created(){
+        created() {
             this.$store.dispatch('fetchUser');
             this.$store.commit('clearAuthData');
         }
@@ -40,7 +40,10 @@
     .main {
         /*background: rgba(228, 228, 228, 0.4);*/
         display: flex;
-
+        background: url("../assets/images/waiter.png");
+        background-size: cover;
+        background-attachment: fixed;
+        height: 100vh;
         .shopping-card {
             position: absolute;
             right: 10%;
