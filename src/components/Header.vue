@@ -1,13 +1,13 @@
 <template>
   <header id="header">
     <div class="logo">
-      <router-link to="/">Food order</router-link>
+      <router-link to="/auth/signup">Food order</router-link>
     </div>
     <nav >
       <ul class="d-flex align-items-center">
         <li>
           <router-link to='/history'>
-            <button class="btn btn-warning">
+            <button :disabled="!this.auth" class="btn btn-warning">
               <font-awesome-icon class="icon-history" icon="history"/>
             </button>
           </router-link>
@@ -17,10 +17,10 @@
         </li>
         <li class="waiter-name" v-if="name">{{ name }}</li>
         <li v-if="!auth">
-          <router-link to="/auth/signup">Sign Up</router-link>
+          <router-link to="/signup">Sign Up</router-link>
         </li>
         <li v-if="!auth">
-          <router-link to="/auth/signin">Sign In</router-link>
+          <router-link to="/signin">Sign In</router-link>
         </li>
         <li v-if="auth">
           <button @click="onLogout" class="logout">Logout</button>
@@ -46,6 +46,8 @@
       onLogout() {
         this.$store.dispatch('logout');
         this.$store.dispatch('clearAuthData');
+        this.$router.push({ path: '/signin' });
+        this.$store.dispatch('clearCart');
       }
     }
   }

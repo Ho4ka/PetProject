@@ -5,20 +5,20 @@ import Salad from './components/Salad.vue';
 import Burger from './components/Burger.vue';
 import Main from './components/Main.vue';
 import History from './components/History.vue';
-import signup from './components/auth/signup.vue';
-import signin from './components/auth/signin.vue';
+import signup from './components/signup.vue';
+import signin from './components/signin.vue';
 import store from './store/modules/authentificaton.js';
 
 
 
 const routes = [
-  { path: '/', component: Main },
+  { path: '/main', component: Main },
   { path: '/pizza', component: Pizza,
     beforeEnter(to, from, next) {
     if(store.state.idToken) {
       next();
     } else {
-      next('/auth/signup');
+      next('/signup');
     }
     }
   },
@@ -27,7 +27,7 @@ const routes = [
           if(store.state.idToken) {
               next();
           } else {
-              next('/auth/signup');
+              next('/signup');
           }
       }},
   { path: '/burger', component: Burger,
@@ -35,19 +35,13 @@ const routes = [
           if(store.state.idToken) {
               next();
           } else {
-              next('/auth/signup');
+              next('/signup');
           }
       }},
-  { path: '/history', component: History,
-      beforeEnter(to, from, next) {
-          if(store.state.idToken) {
-              next();
-          } else {
-              next('/auth/signup');
-          }
-      }},
-  { path: '/auth/signup', component: signup },
-  { path: '/auth/signin', component: signin },
+  { path: '/history', component: History},
+  { path: '/signup', component: signup,
+  },
+  { path: '/signin', component: signin }
 ];
 
 export default routes;

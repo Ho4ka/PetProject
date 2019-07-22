@@ -64,6 +64,11 @@
             },
 
         },
+      computed: {
+        auth() {
+          return this.$store.getters.isAuthenticated
+        }
+      },
         created() {
             db.collection("history")
                 .get()

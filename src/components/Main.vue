@@ -40,10 +40,6 @@
     .main {
         /*background: rgba(228, 228, 228, 0.4);*/
         display: flex;
-        background: url("../assets/images/waiter.png");
-        background-size: cover;
-        background-attachment: fixed;
-        height: 100vh;
         .shopping-card {
             position: absolute;
             right: 10%;

@@ -105,7 +105,9 @@
             width: 80%;
             background: #f1b601;
             border: none;
-            color: #c10a28;
+            color: white;
+            font-weight: 700;
+      letter-spacing: 1px;
             margin: 30px auto;
             padding: 10px 27px;
             text-align: center;

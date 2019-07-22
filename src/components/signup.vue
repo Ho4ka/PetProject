@@ -44,11 +44,14 @@
                 </div>
             </form>
         </div>
+        <div class="mb-1">
+        </div>
     </div>
 </template>
 
 <script>
     import { required, email, minLength, sameAs } from 'vuelidate/lib/validators';
+    import routes from '../routes';
     export default {
         data() {
             return {
@@ -59,19 +62,34 @@
             }
         },
         methods: {
-            onSubmit() {
-                const formData = {
-                    name: this.name,
-                    email: this.email,
-                    password: this.password,
-                    confirmPassword: this.confirmPassword,
-                };
-                this.$store.dispatch('signup', formData).then( res => {
-                        this.$router.push({ path: '/' });
-                }).catch(error => {
-                    console.log(error);
-                });
-            }
+          onSubmit() {
+            const formData = {
+              name: this.name,
+              email: this.email,
+              password: this.password,
+              confirmPassword: this.confirmPassword,
+            };
+            this.$store.dispatch('signup', formData);
+              this.showMsgBoxTwo();
+
+          },
+          showMsgBoxTwo() {
+            this.$bvModal.msgBoxOk(`Waiter ${this.name} was successfully created `, {
+              title: 'Confirmation',
+              size: 'sm',
+              buttonSize: 'sm',
+              okVariant: 'success',
+              headerClass: 'p-2 border-bottom-0',
+              footerClass: 'p-2 border-top-0',
+              centered: true
+            })
+              .then(value => {
+                this.$router.push({path: '/pizza'});
+              })
+              .catch(err => {
+                // An error occurred
+              })
+          }
         },
         computed: {
             auth() {
@@ -100,14 +118,13 @@
 
 <style scoped>
     #signup {
-        margin: 50px auto;
-        background: white;
-        height: auto;
+        margin: 50px 500px;
     }
     .signup-form {
         width: 400px;
         border: 1px solid #eee;
         padding: 20px;
+        background: white;
         box-shadow: 0 2px 3px #ccc;
     }
 

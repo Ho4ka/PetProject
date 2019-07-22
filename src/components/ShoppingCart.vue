@@ -1,12 +1,12 @@
 <template>
     <div class="row">
         <div class="shopping-cart col-md-3">
-            <b-button class="in-cart d-flex justify-content-between align-items-center" v-b-modal.modal-1
+            <b-button :disabled="!this.auth" class="in-cart d-flex justify-content-between align-items-center" v-b-modal.modal-1
                       variant="success" data-toggle="modal" data-target="#shoppingCart">
                 <font-awesome-icon icon="shopping-cart"/>
                 ({{ numInCart }})
             </b-button>
-            <b-modal id="modal-1" ref="modal-1" title="Cart"
+            <b-modal id="modal-1" ref="modal-1" title="Bill"
                      :cancel-disabled="true">
                 <table class="table">
                     <b-list-group v-for="(item, index) in cart" :key="item.id">
@@ -105,6 +105,9 @@
       total() {
         return this.cart.reduce((a, b) => a + +b.price, 0);
       },
+      auth() {
+        return this.$store.getters.isAuthenticated
+      }
     }
   }
 </script>
@@ -142,6 +145,7 @@
     }
 
     button {
-        color: #333333;
+        color: white;
+        font-weight: 700;
     }
 </style>
