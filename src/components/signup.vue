@@ -51,7 +51,6 @@
 
 <script>
     import { required, email, minLength, sameAs } from 'vuelidate/lib/validators';
-    import routes from '../routes';
     export default {
         data() {
             return {
@@ -118,10 +117,17 @@
 
 <style scoped>
     #signup {
-        margin: 50px 500px;
+      display: flex;
+        width: 100%;
+        height: 100%;
+        background: url("../assets/images/waiter.png");
+        background-size: cover;
+        background-attachment: fixed;
     }
     .signup-form {
+        margin: 100px auto;
         width: 400px;
+        height: auto;
         border: 1px solid #eee;
         padding: 20px;
         background: white;

@@ -1,6 +1,7 @@
 <template>
   <div id="signin">
     <div class="signin-form">
+      <h5>Please login. Or if you a new user  <router-link class="btn-login" to="/signup">SIGN UP</router-link></h5>
       <form @submit.prevent="onSubmit">
         <div class="input">
           <label for="email">Mail</label>
@@ -41,20 +42,30 @@
           email: this.email,
           password: this.password,
         };
-        console.log(formData);
-          this.$store.dispatch('login', {email:formData.email, password: formData.password})
+          this.$store.dispatch('login', {email:formData.email, password: formData.password});
+            this.$router.push({path: '/pizza'});
       }
     }
   }
 </script>
 
 <style scoped>
+  #signin {
+   display: flex;
+    width: 100%;
+    height: 100vh;
+    background: url("../assets/images/waiter.png");
+    background-size: cover;
+    background-attachment: fixed;
+  }
   .signin-form {
-    width: 400px;
-    margin: 30px auto;
+    width: 450px;
+    height: 300px;
+    margin: 100px auto;
     border: 1px solid #eee;
     padding: 20px;
     box-shadow: 0 2px 3px #ccc;
+    background: white;
   }
 
   .input {

@@ -1,11 +1,11 @@
 <template>
   <header id="header">
     <div class="logo">
-      <router-link to="/auth/signup">Food order</router-link>
+      <router-link to="/signup">Keeper</router-link>
     </div>
     <nav >
       <ul class="d-flex align-items-center">
-        <li>
+        <li v-if="auth">
           <router-link to='/history'>
             <button :disabled="!this.auth" class="btn btn-warning">
               <font-awesome-icon class="icon-history" icon="history"/>
@@ -13,7 +13,7 @@
           </router-link>
         </li>
         <li>
-          <ShoppingCart class="shopping-card"/>
+          <ShoppingCart v-if="auth" class="shopping-card"/>
         </li>
         <li class="waiter-name" v-if="name">{{ name }}</li>
         <li v-if="!auth">
@@ -67,6 +67,7 @@
   .logo {
     font-weight: bold;
     color: white;
+    letter-spacing: 2px;
   }
 
   .logo a {

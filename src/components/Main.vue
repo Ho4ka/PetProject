@@ -1,6 +1,6 @@
 <template>
     <section class="main">
-        <AllItems :items="forSale"></AllItems>
+        <AllItems v-if="auth" :items="forSale"></AllItems>
         <transition name="fade" mode="out-in">
             <router-view :items="forSale"></router-view>
         </transition>

@@ -19,4 +19,8 @@
 </script>
 
 <style lang="scss">
+    .all-items {
+
+
+    }
 </style>
