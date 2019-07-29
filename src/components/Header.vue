@@ -1,7 +1,7 @@
 <template>
   <header id="header">
     <div class="logo">
-      <router-link to="/signup">Keeper</router-link>
+      <router-link class="logo-name" to="/signup">Keeper</router-link>
     </div>
     <nav >
       <ul class="d-flex align-items-center">
@@ -17,7 +17,7 @@
         </li>
         <li class="waiter-name" v-if="name">{{ name }}</li>
         <li v-if="!auth">
-          <router-link to="/signup">Sign Up</router-link>
+          <router-link  to="/signup">Sign Up</router-link>
         </li>
         <li v-if="!auth">
           <router-link to="/signin">Sign In</router-link>
@@ -66,13 +66,28 @@
 
   .logo {
     font-weight: bold;
-    color: white;
+    color: yellow;
     letter-spacing: 2px;
   }
 
   .logo a {
     text-decoration: none;
-    color: white;
+    color: #f1b601;
+    vertical-align: text-bottom;
+  }
+
+  .logo-name {
+    font-size: 38px;
+    color: silver;
+    text-shadow: 0 1px 1px #bbb,
+    0 2px 0 #999,
+    0 3px 0 #888,
+    0 4px 0 #777,
+    0 5px 0 #666,
+    0 6px 0 #555,
+    0 7px 0 #444,
+    0 8px 0 #333,
+    0 9px 7px #302314;
   }
 
   nav {
@@ -117,5 +132,9 @@
     font: inherit;
     color: white;
     cursor: pointer;
+  }
+  .bounce-in-top {
+    -webkit-animation: bounce-in-top 1.1s both;
+    animation: bounce-in-top 1.1s both;
   }
 </style>

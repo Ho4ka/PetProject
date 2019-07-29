@@ -1,6 +1,6 @@
 <template>
   <div id="signin">
-    <div class="signin-form">
+    <div class="signin-form slide-in-elliptic-top-fwd">
       <h5>Please login. Or if you a new user  <router-link class="btn-login" to="/signup">SIGN UP</router-link></h5>
       <form @submit.prevent="onSubmit">
         <div class="input">
@@ -42,9 +42,23 @@
           email: this.email,
           password: this.password,
         };
-          this.$store.dispatch('login', {email:formData.email, password: formData.password});
-            this.$router.push({path: '/pizza'});
-      }
+          this.$store.dispatch('login', {email:formData.email, password: formData.password}).then(()=>{
+              this.showMsgBoxTwo();
+          });
+      },
+        showMsgBoxTwo() {
+            this.$bvModal.msgBoxOk(`Login successful!`, {
+                title: 'Confirmation',
+                size: 'sm',
+                buttonSize: 'sm',
+                okVariant: 'success',
+                headerClass: 'p-2 border-bottom-0',
+                footerClass: 'p-2 border-top-0',
+                centered: true
+            }).finally(value => {
+                this.$router.push({path: '/pizza'});
+            })
+        }
     }
   }
 </script>
@@ -113,5 +127,45 @@
     background-color: transparent;
     color: #ccc;
     cursor: not-allowed;
+  }
+  .btn-login {
+    color: #f1b601;
+  }
+
+  @-webkit-keyframes slide-in-elliptic-top-fwd {
+    0% {
+      -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+      transform: translateY(-600px) rotateX(-30deg) scale(0);
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) rotateX(0) scale(1);
+      transform: translateY(0) rotateX(0) scale(1);
+      -webkit-transform-origin: 50% 1400px;
+      transform-origin: 50% 1400px;
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-elliptic-top-fwd {
+    0% {
+      -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+      transform: translateY(-600px) rotateX(-30deg) scale(0);
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0) rotateX(0) scale(1);
+      transform: translateY(0) rotateX(0) scale(1);
+      -webkit-transform-origin: 50% 1400px;
+      transform-origin: 50% 1400px;
+      opacity: 1;
+    }
+  }
+  .slide-in-elliptic-top-fwd {
+    -webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
 </style>
