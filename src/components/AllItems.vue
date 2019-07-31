@@ -19,8 +19,9 @@
 </script>
 
 <style lang="scss">
-    .all-items {
-
-
-    }
+.all-items {
+    display: flex;
+    position: absolute;
+    z-index: 500;
+}
 </style>

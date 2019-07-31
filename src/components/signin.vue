@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  export default {
+export default {
     data () {
       return {
         email: '',
@@ -57,115 +57,115 @@
                 centered: true
             }).finally(value => {
                 this.$router.push({path: '/pizza'});
-            })
-        }
+          })
+         }
     }
   }
 </script>
 
 <style scoped>
-  #signin {
-   display: flex;
-    width: 100%;
-    height: 100vh;
-    background: url("../assets/images/waiter.png");
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  .signin-form {
-    width: 450px;
-    height: 300px;
-    margin: 100px auto;
-    border: 1px solid #eee;
-    padding: 20px;
-    box-shadow: 0 2px 3px #ccc;
-    background: white;
-  }
+#signin {
+ display: flex;
+  width: 100%;
+  height: 100vh;
+  background: url("../assets/images/waiter.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+.signin-form {
+  width: 450px;
+  height: 300px;
+  margin: 100px auto;
+  border: 1px solid #eee;
+  padding: 20px;
+  box-shadow: 0 2px 3px #ccc;
+  background: white;
+}
 
-  .input {
-    margin: 10px auto;
-  }
+.input {
+  margin: 10px auto;
+}
 
-  .input label {
-    display: block;
-    color: #4e4e4e;
-    margin-bottom: 6px;
-  }
+.input label {
+  display: block;
+  color: #4e4e4e;
+  margin-bottom: 6px;
+}
 
-  .input input {
-    font: inherit;
-    width: 100%;
-    padding: 6px 12px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-  }
+.input input {
+  font: inherit;
+  width: 100%;
+  padding: 6px 12px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
 
-  .input input:focus {
-    outline: none;
-    border: 1px solid #521751;
-    background-color: #eee;
-  }
+.input input:focus {
+  outline: none;
+  border: 1px solid #521751;
+  background-color: #eee;
+}
 
-  .submit button {
-    border: 1px solid #521751;
-    color: #521751;
-    padding: 10px 20px;
-    font: inherit;
-    cursor: pointer;
-  }
+.submit button {
+  border: 1px solid #521751;
+  color: #521751;
+  padding: 10px 20px;
+  font: inherit;
+  cursor: pointer;
+}
 
-  .submit button:hover,
-  .submit button:active {
-    background-color: #521751;
-    color: white;
-  }
+.submit button:hover,
+.submit button:active {
+  background-color: #521751;
+  color: white;
+}
 
-  .submit button[disabled],
-  .submit button[disabled]:hover,
-  .submit button[disabled]:active {
-    border: 1px solid #ccc;
-    background-color: transparent;
-    color: #ccc;
-    cursor: not-allowed;
-  }
-  .btn-login {
-    color: #f1b601;
-  }
+.submit button[disabled],
+.submit button[disabled]:hover,
+.submit button[disabled]:active {
+  border: 1px solid #ccc;
+  background-color: transparent;
+  color: #ccc;
+  cursor: not-allowed;
+}
+.btn-login {
+  color: #f1b601;
+}
 
-  @-webkit-keyframes slide-in-elliptic-top-fwd {
-    0% {
-      -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
-      transform: translateY(-600px) rotateX(-30deg) scale(0);
-      -webkit-transform-origin: 50% 100%;
-      transform-origin: 50% 100%;
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateY(0) rotateX(0) scale(1);
-      transform: translateY(0) rotateX(0) scale(1);
-      -webkit-transform-origin: 50% 1400px;
-      transform-origin: 50% 1400px;
-      opacity: 1;
-    }
+@-webkit-keyframes slide-in-elliptic-top-fwd {
+  0% {
+    -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+    transform: translateY(-600px) rotateX(-30deg) scale(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 0;
   }
-  @keyframes slide-in-elliptic-top-fwd {
-    0% {
-      -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
-      transform: translateY(-600px) rotateX(-30deg) scale(0);
-      -webkit-transform-origin: 50% 100%;
-      transform-origin: 50% 100%;
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateY(0) rotateX(0) scale(1);
-      transform: translateY(0) rotateX(0) scale(1);
-      -webkit-transform-origin: 50% 1400px;
-      transform-origin: 50% 1400px;
-      opacity: 1;
-    }
+  100% {
+    -webkit-transform: translateY(0) rotateX(0) scale(1);
+    transform: translateY(0) rotateX(0) scale(1);
+    -webkit-transform-origin: 50% 1400px;
+    transform-origin: 50% 1400px;
+    opacity: 1;
   }
-  .slide-in-elliptic-top-fwd {
-    -webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes slide-in-elliptic-top-fwd {
+  0% {
+    -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+    transform: translateY(-600px) rotateX(-30deg) scale(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 0;
   }
+  100% {
+    -webkit-transform: translateY(0) rotateX(0) scale(1);
+    transform: translateY(0) rotateX(0) scale(1);
+    -webkit-transform-origin: 50% 1400px;
+    transform-origin: 50% 1400px;
+    opacity: 1;
+  }
+}
+.slide-in-elliptic-top-fwd {
+  -webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
 </style>

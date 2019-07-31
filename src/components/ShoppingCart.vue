@@ -38,10 +38,10 @@
 </template>
 
 <script>
-  import {dollars} from '../filters.js';
-  import db from '../fb.js';
+import {dollars} from '../filters.js';
+import db from '../fb.js';
 
-  export default {
+export default {
     name: "ShoppingCart",
     filters: {
       dollars
@@ -62,13 +62,8 @@
             total: this.total,
             name: this.name
         })
-          .then(function (res) {
-
-          })
-          .catch(function (error) {
-            console.error("Error writing document: ", error);
-          });
-
+          .then(() => {})
+          .catch((error) => console.error("Error writing document: ", error));
 
         db.collection("history")
           .get()
@@ -109,43 +104,43 @@
         return this.$store.getters.isAuthenticated
       }
     }
-  }
+}
 </script>
 
 <style scoped lang="scss">
-    .in-cart {
-        width: 70px;
-    }
+.in-cart {
+    width: 70px;
+}
 
-    .list-group {
-        margin: 10px 0;
-    }
+.list-group {
+    margin: 10px 0;
+}
 
-    .list-group-item {
-        box-shadow: 0 0 10px rgba(73, 74, 78, .1);
-        border: none;
-    }
+.list-group-item {
+    box-shadow: 0 0 10px rgba(73, 74, 78, .1);
+    border: none;
+}
 
-    .total {
-        margin-top: 25px;
-        color: #c10a28;
-        font-size: 23px;
-        font-weight: 500;
-    }
+.total {
+    margin-top: 25px;
+    color: #c10a28;
+    font-size: 23px;
+    font-weight: 500;
+}
 
-    .item-price {
-        width: 113px;
-        display: flex;
-        justify-content: space-between;
-    }
+.item-price {
+    width: 113px;
+    display: flex;
+    justify-content: space-between;
+}
 
-    .trash {
-        color: silver;
-        cursor: pointer;
-    }
+.trash {
+    color: silver;
+    cursor: pointer;
+}
 
-    button {
-        color: white;
-        font-weight: 700;
-    }
+button {
+    color: white;
+    font-weight: 700;
+}
 </style>

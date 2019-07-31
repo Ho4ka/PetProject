@@ -1,9 +1,9 @@
 <template>
-    <div class="history">
+    <div class="history" v-if="this.animate">
         <ul class="order-list">
             <li class="order-item first-line">
-                <button class="sort-item" @click="sortedItems">Sort by date</button>
-                <button class="sort-item" @click="sortByPrice">Sort by price</button></li>
+                <button class="sort-item text-focus-in" @click="sortedItems">Sort by date</button>
+                <button class="sort-item text-focus-in" @click="sortByPrice">Sort by price</button></li>
             <li class="order-item" v-for="(bill, index) in bills" :key="index">
                 <h3 class="order-date">{{ bill.date | formatTime }}</h3>
                 <div class="order-detail">
@@ -30,89 +30,99 @@
 </template>
 
 <script>
-    import db from '../fb.js';
-    import moment from "moment";
-    import {dollars} from '../filters.js';
+import db from '../fb.js';
+import moment from "moment";
+import {dollars} from '../filters.js';
 
-    export default {
-        name: "History",
-        data() {
-            return {
-                bills: [],
-                orders: []
-            }
-        },
-        filters: {
-            formatTime(value) {
-                return moment(value).format('MMMM Do, h:mm');
-            },
-            dollars
-        },
-        methods: {
-            getImgUrl(i) {
-                return 'src/assets/images/' + i;
-            },
-            sortedItems: function () {
-                this.bills.sort((a, b) => {
-                    return new Date(a.date) - new Date(b.date);
-                });
-                return this.items;
-            },
-            sortByPrice() {
-                return this.bills.sort((a, b) => a.total - b.total);
-
-            },
-
-        },
-      computed: {
-        auth() {
-          return this.$store.getters.isAuthenticated
+export default {
+    name: "History",
+    data() {
+        return {
+            bills: [],
+            orders: [],
+          animate: false
         }
-      },
-        created() {
-            db.collection("history")
-                .get()
-                .then(querySnapshot => {
-                    this.bills = querySnapshot.docs.map(doc => doc.data());
-                });
-        }
+    },
+    filters: {
+        formatTime(value) {
+            return moment(value).format('MMMM Do, h:mm');
+        },
+        dollars
+    },
+    methods: {
+        getImgUrl(i) {
+            return 'src/assets/images/' + i;
+        },
+        sortedItems: function () {
+            this.bills.sort((a, b) => {
+                return new Date(a.date) - new Date(b.date);
+            });
+            return this.items;
+        },
+        sortByPrice() {
+            return this.bills.sort((a, b) => a.total - b.total);
+
+        },
+
+    },
+     mounted(){
+       setTimeout(() => {
+         this.animate = true;}, 1000);
+  },
+  computed: {
+    auth() {
+      return this.$store.getters.isAuthenticated
     }
+  },
+    created() {
+        db.collection("history")
+            .get()
+            .then(querySnapshot => {
+                this.bills = querySnapshot.docs.map(doc => doc.data());
+            });
+    }
+}
 </script>
 
 <style lang="scss">
-    .history {
-        justify-content: center;
+.history {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 130px;
+    background: white;
+
+    .order-list {
         display: flex;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
         width: 100%;
-        background: white;
-
-        .order-list {
+        overflow: scroll;
+        .first-line {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            overflow: scroll;
-            .first-line {
-                display: flex;
-                justify-content: space-between;
-            }
-            .sort-item {
-                border: none;
-                background: none;
-                outline: none;
-                font-weight: 700;
-                color: #f1b601;
-            }
+            justify-content: space-between;
+        }
+        .sort-item {
+            border: none;
+            background: none;
+            outline: none;
+            font-weight: 700;
+            color: #f1b601;
+        }
 
-            .order-item {
-                background: white;
-                font-size: 18px;
-                padding: 20px;
-                width: 600px;
-                border-bottom: 1px solid #ddd;
-                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+        .order-item {
+            background: white;
+            font-size: 18px;
+            padding: 20px;
+            width: 600px;
+            border-bottom: 1px solid #ddd;
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+                .text-focus-in {
+                    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+                    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+                }
 
                 .order-detail {
                     font-size: 23px;
@@ -158,4 +168,30 @@
             font-weight: 500;
         }
     }
+
+    @-webkit-keyframes text-focus-in {
+        0% {
+            -webkit-filter: blur(12px);
+            filter: blur(12px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-filter: blur(0px);
+            filter: blur(0px);
+            opacity: 1;
+        }
+    }
+    @keyframes text-focus-in {
+        0% {
+            -webkit-filter: blur(12px);
+            filter: blur(12px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-filter: blur(0px);
+            filter: blur(0px);
+            opacity: 1;
+        }
+    }
+
 </style>

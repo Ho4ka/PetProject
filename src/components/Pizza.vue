@@ -10,42 +10,42 @@
     </section>
 </template>
 <script>
-    import Card from "./Card.vue";
+import Card from "./Card.vue";
 
-    export default {
-        components: {Card},
-        props: {
-            items: Array,
-        },
-        methods: {
-          goToMain() {
-            this.$router.go(-1);
-          }
-        }
+export default {
+    components: {Card},
+    props: {
+        items: Array,
+    },
+    methods: {
+      goToMain() {
+        this.$router.go(-1);
+      }
     }
+}
 </script>
 
 <style  lang="scss">
+.item-component-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
 
-    .item-component-wrapper {
+    .go-back {
+        position: absolute;
+        left: 10%;
+    }
+
+    .type {
         display: flex;
-        width: 100%;
-        height: 100vh;
+        flex-wrap: wrap;
 
-        .go-back {
-            position: absolute;
-            left: 10%;
-        }
-        .type {
-            display: flex;
-            flex-wrap: wrap;
-
-            .item-header {
-                margin: 15px 0;
-                width: 100%;
-                color: #333333;
-                text-align: center;
-            }
+        .item-header {
+            margin: 15px 0;
+            width: 100%;
+            color: #333333;
+            text-align: center;
         }
     }
+}
 </style>

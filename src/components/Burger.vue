@@ -9,37 +9,37 @@
     </section>
 </template>
 <script>
-  import Card from "./Card.vue";
+import Card from "./Card.vue";
 
-  export default {
+export default {
     components: {Card},
     props: {
       items: Array,
     }
-  }
+}
 </script>
 
 <style  lang="scss">
+.item-component-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    .go-back {
+        position: absolute;
+        left: 10%;
+    }
 
-    .item-component-wrapper {
+    .type {
         display: flex;
-        width: 100%;
-        height: 100vh;
-        .go-back {
-            position: absolute;
-            left: 10%;
-        }
+        flex-wrap: wrap;
+        padding-top: 150px;
 
-        .type {
-            display: flex;
-            flex-wrap: wrap;
-
-            .item-header {
-                width: 100%;
-                margin: 15px 0;
-                color: #333333;
-                text-align: center;
-            }
+        .item-header {
+            width: 100%;
+            margin: 15px 0;
+            color: #333333;
+            text-align: center;
         }
     }
+}
 </style>

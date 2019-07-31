@@ -9,41 +9,40 @@
     </section>
 </template>
 <script>
-  import Card from "./Card.vue";
+import Card from "./Card.vue";
 
-  export default {
+export default {
     components: {Card},
     props: {
       items: Array,
     }
-  }
+}
 </script>
 
 <style  lang="scss">
-    .item-component-wrapper {
+.item-component-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    .go-back {
+        position: absolute;
+        left: 10%;
+    }
+
+    .type {
         display: flex;
-        width: 100%;
-        height: 100%;
+        flex-wrap: wrap;
+        background-image: url("../assets/images/parallax.jpg");
+        background-size: cover;
+        background-position: center;
 
-
-        .go-back {
-            position: absolute;
-            left: 10%;
-        }
-
-        .type {
-            display: flex;
-            flex-wrap: wrap;
-            background-image: url("../assets/images/parallax.jpg");
-            background-size: cover;
-            background-position: center;
-
-            .item-header {
-                margin: 15px 0;
-                width: 100%;
-                color: #333333;
-                text-align: center;
-            }
+        .item-header {
+            margin: 15px 0;
+            width: 100%;
+            color: #333333;
+            text-align: center;
         }
     }
+}
 </style>
