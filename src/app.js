@@ -5,7 +5,6 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-
 import routes from './routes.js';
 import store from './store/store';
 import Vuelidate from 'vuelidate';
@@ -19,11 +18,6 @@ Vue.use(BootstrapVue);
 library.add(faShoppingCart,faTrash, faPizzaSlice, faSeedling, faHamburger, faWineBottle, faHistory);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-Vue.filter('toUSD', function (value) {
-    return `$${value}`;
-});
-
-// Vue.use(VueFirestore);
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);

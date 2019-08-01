@@ -3,7 +3,7 @@
     <div class="logo">
       <router-link class="logo-name" to="/signup">Keeper</router-link>
     </div>
-    <nav >
+    <nav>
       <ul class="d-flex align-items-center">
         <li v-if="auth">
           <router-link to='/history'>

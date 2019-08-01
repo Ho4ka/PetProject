@@ -1,5 +1,4 @@
 // routes.js
-
 import Pizza from './components/Pizza.vue';
 import Salad from './components/Salad.vue';
 import Burger from './components/Burger.vue';
